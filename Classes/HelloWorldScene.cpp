@@ -35,5 +35,33 @@ bool HelloWorld::init()
 
     addChild(rootNode);
 
+	this->scheduleUpdate();
+	auto winSize = Director::getInstance()->getVisibleSize();
+	HighScore = 0;
+	Tank = (Sprite*)rootNode->getChildByName("Player");
+
+	////TOUCHES
+	auto touchListener = EventListenerTouchOneByOne::create();
+
+	// Set callbacks for our touch functions.
+	touchListener->onTouchBegan = CC_CALLBACK_2(HelloWorld::onTouchBegan, this);
+	touchListener->onTouchEnded = CC_CALLBACK_2(HelloWorld::onTouchEnded, this);
+	touchListener->onTouchMoved = CC_CALLBACK_2(HelloWorld::onTouchMoved, this);
+	touchListener->onTouchCancelled = CC_CALLBACK_2(HelloWorld::onTouchCancelled, this);
+
+	_eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
+
+	//StartButton
+	StartButton = static_cast<ui::Button*>(rootNode->getChildByName("StartButton"));
+	StartButton->addTouchEventListener(CC_CALLBACK_2(HelloWorld::StartButtonPressed, this));
+	StartButton->setPosition(Vec2(winSize.width*0.5f, winSize.height*0.5f));
+
+	Up_Button = static_cast<ui::Button*>(rootNode->getChildByName("Up_Button"));
+	Up_Button->addTouchEventListener(CC_CALLBACK_2(HelloWorld::UpButtonPressed, this));
+
+	Down_Button = static_cast<ui::Button*>(rootNode->getChildByName("Down_Button"));
+	Down_Button->addTouchEventListener(CC_CALLBACK_2(HelloWorld::DownButtonPressed, this));
+	Down_Button->setPosition(Vec2(winSize.width*0.5f, winSize.height*0.1f));
+
     return true;
 }

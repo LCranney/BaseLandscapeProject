@@ -17,7 +17,7 @@
             <FileData Type="Normal" Path="Background.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Sprite_2" ActionTag="1613987195" Tag="4" IconVisible="False" LeftMargin="24.5000" RightMargin="1020.5000" TopMargin="327.0000" BottomMargin="237.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="Player" ActionTag="1613987195" Tag="4" IconVisible="False" LeftMargin="24.5000" RightMargin="1020.5000" TopMargin="327.0000" BottomMargin="237.0000" ctype="SpriteObjectData">
             <Size X="91.0000" Y="76.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="70.0000" Y="275.0000" />
@@ -48,7 +48,7 @@
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="375.0000" Y="40.0000" />
             <Scale ScaleX="2.0000" ScaleY="1.7500" />
-            <CColor A="255" R="255" G="255" B="255" />
+            <CColor A="255" R="165" G="42" B="42" />
             <PrePosition X="0.3301" Y="0.0625" />
             <PreSize X="0.0405" Y="0.0547" />
             <TextColor A="255" R="65" G="65" B="70" />
@@ -63,7 +63,7 @@
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="700.0000" Y="40.0000" />
             <Scale ScaleX="2.0000" ScaleY="1.7500" />
-            <CColor A="255" R="255" G="255" B="255" />
+            <CColor A="255" R="165" G="42" B="42" />
             <PrePosition X="0.6162" Y="0.0625" />
             <PreSize X="0.0405" Y="0.0547" />
             <TextColor A="255" R="65" G="65" B="70" />
