@@ -28,13 +28,13 @@
             <FileData Type="Normal" Path="PLayer Tank.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="StartButton" ActionTag="1133545156" Tag="5" IconVisible="False" LeftMargin="502.0000" RightMargin="588.0000" TopMargin="317.0000" BottomMargin="287.0000" TouchEnable="True" FontSize="14" ButtonText="Start" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="StartButton" ActionTag="1133545156" Tag="5" IconVisible="False" LeftMargin="552.0000" RightMargin="538.0000" TopMargin="297.0000" BottomMargin="307.0000" TouchEnable="True" FontSize="14" ButtonText="Start" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="46.0000" Y="36.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="525.0000" Y="305.0000" />
+            <Position X="575.0000" Y="325.0000" />
             <Scale ScaleX="2.3190" ScaleY="2.0233" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4621" Y="0.4766" />
+            <PrePosition X="0.5062" Y="0.5078" />
             <PreSize X="0.0000" Y="0.0000" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
