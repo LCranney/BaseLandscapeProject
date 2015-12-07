@@ -1,12 +1,12 @@
 #include "HelloWorldScene.h"
 #include "cocostudio/CocoStudio.h"
 #include "GameManager.h"
-#include ""
 #include "ui/CocosGUI.h"
 
 USING_NS_CC;
 
 using namespace cocostudio::timeline;
+using namespace cocos2d;
 
 Scene* HelloWorld::createScene()
 {
@@ -78,7 +78,10 @@ void HelloWorld::UpButtonPressed(Ref *pSender, cocos2d::ui::Widget::TouchEventTy
 
 		if (type == cocos2d::ui::Widget::TouchEventType::ENDED)
 		{
-			Tank->setPosition(currentPos.x, currentPos.y += 70);
+			if (currentPos.y < 468)
+			{
+				Tank->setPosition(currentPos.x, currentPos.y += 113);
+			}
 		}
 	}
 
@@ -93,7 +96,10 @@ void HelloWorld::DownButtonPressed(Ref *pSender, cocos2d::ui::Widget::TouchEvent
 
 		if (type == cocos2d::ui::Widget::TouchEventType::ENDED)
 		{
-			Tank->setPosition(currentPos.x, currentPos.y -= 70);
+			if (currentPos.y > 242)
+			{
+				Tank->setPosition(currentPos.x, currentPos.y -= 113);
+			}
 		}
 	}
 }
@@ -151,14 +157,20 @@ void HelloWorld::onTouchCancelled(Touch* touch, Event* event)
 
 void HelloWorld::update(float delta)
 {
+
+	GameManager::sharedGameManager()->AddToScore(1);
 	if (GameManager::sharedGameManager()->isGameLive)
 	{
 		Vec2 currentPos = Tank->getPosition();
 		Tank->setPosition(currentPos.x, currentPos.y);
 
-		if (GameManager::sharedGameManager()->GetScore % 60 == 0)
+		int score = GameManager::sharedGameManager()->GetScore();
+		if (score % 60 == 0)
 		{
+			if (wave = false)
+			{
 
+			}
 		}
 	}
 

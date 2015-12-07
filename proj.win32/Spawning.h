@@ -6,8 +6,12 @@
 class Spawning
 {
 public:
+	~Spawning();
+	static Spawning* sharedSpawnManager();
 
-	static Spawning* spawn();
+	void spawn();
+
+	bool isGameLive;
 
 	int spawnX;
 	int spawnY;
@@ -37,7 +41,8 @@ public:
 	bool row5;
 
 private:
-
+	Spawning();
+	static Spawning* instance;
 };
 #endif
 
