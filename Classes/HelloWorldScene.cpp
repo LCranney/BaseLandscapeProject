@@ -41,6 +41,9 @@ bool HelloWorld::init()
 	HighScore = 0;
 	Tank = (Sprite*)rootNode->getChildByName("Player");
 
+	scoreLabel = (Label*)rootNode->getChildByName("Score");
+	HighScoreLabel = (Label*)rootNode->getChildByName("HighScoreLabel");
+
 	////TOUCHES
 	auto touchListener = EventListenerTouchOneByOne::create();
 
@@ -75,6 +78,8 @@ void HelloWorld::update(float delta)
 		Tank->setPosition(currentPos.x, currentPos.y);
 	}
 
+
+	scoreLabel->setString(StringUtils::format("%d", GameManager::sharedGameManager()->GetScore()));
 }
 
 void HelloWorld::UpButtonPressed(Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
@@ -123,6 +128,10 @@ void HelloWorld::StartGame()
 	auto winSize = Director::getInstance()->getVisibleSize();
 	GameManager::sharedGameManager()->isGameLive = true;
 
+	Tank->setPosition(Tank->getPosition().x, winSize.height*0.4f);
+	
+	GameManager::sharedGameManager()->ResetScore();
+
 	auto moveTo = MoveTo::create(0.5, Vec2(-winSize.width*0.5f, winSize.height*0.5f));
 	StartButton->runAction(moveTo);
 }
@@ -131,6 +140,12 @@ void HelloWorld::EndGame()
 {
 	auto winSize = Director::getInstance()->getVisibleSize();
 	GameManager::sharedGameManager()->isGameLive = false;
+
+	if (HighScore > GameManager::sharedGameManager()->GetScore())
+	{
+		HighScore = GameManager::sharedGameManager()->GetScore();
+		HighScoreLabel->setString(StringUtils::format("%d", HighScore));
+	}
 
 	auto moveTo = MoveTo::create(0.5, Vec2(winSize.width*0.5f, winSize.height*0.5f));
 	StartButton->runAction(moveTo);

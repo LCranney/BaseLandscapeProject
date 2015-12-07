@@ -34,6 +34,8 @@ private:
 	cocos2d::ui::Button*	StartButton;
 	cocos2d::ui::Button*	Up_Button;
 	cocos2d::ui::Button*	Down_Button;
+	cocos2d::Label*         scoreLabel;
+	cocos2d::Label*			HighScoreLabel;
 	cocos2d::Sprite*		Tank;
 	int						HighScore;
 

@@ -106,7 +106,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_4" ActionTag="392763079" Tag="11" IconVisible="False" LeftMargin="1114.5000" RightMargin="10.5000" TopMargin="28.5000" BottomMargin="588.5000" FontSize="20" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="HighScoreLabel" ActionTag="392763079" Tag="11" IconVisible="False" LeftMargin="1114.5000" RightMargin="10.5000" TopMargin="28.5000" BottomMargin="588.5000" FontSize="20" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="11.0000" Y="23.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="1120.0000" Y="600.0000" />
