@@ -1,6 +1,7 @@
 #include "HelloWorldScene.h"
 #include "cocostudio/CocoStudio.h"
 #include "GameManager.h"
+#include ""
 #include "ui/CocosGUI.h"
 
 USING_NS_CC;
@@ -66,15 +67,6 @@ bool HelloWorld::init()
 	GameManager::sharedGameManager()->isGameLive = false;
 
     return true;
-}
-void HelloWorld::update(float delta)
-{
-	if (GameManager::sharedGameManager()->isGameLive)
-	{
-		Vec2 currentPos = Tank->getPosition();
-		Tank->setPosition(currentPos.x, currentPos.y);
-	}
-
 }
 
 void HelloWorld::UpButtonPressed(Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
@@ -155,4 +147,19 @@ void HelloWorld::onTouchMoved(Touch* touch, Event* event)
 void HelloWorld::onTouchCancelled(Touch* touch, Event* event)
 {
 	cocos2d::log("touch cancelled");
+}
+
+void HelloWorld::update(float delta)
+{
+	if (GameManager::sharedGameManager()->isGameLive)
+	{
+		Vec2 currentPos = Tank->getPosition();
+		Tank->setPosition(currentPos.x, currentPos.y);
+
+		if (GameManager::sharedGameManager()->GetScore % 60 == 0)
+		{
+
+		}
+	}
+
 }
