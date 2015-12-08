@@ -141,7 +141,7 @@ void HelloWorld::EndGame()
 	auto winSize = Director::getInstance()->getVisibleSize();
 	GameManager::sharedGameManager()->isGameLive = false;
 
-	if (HighScore > GameManager::sharedGameManager()->GetScore())
+	if (HighScore < GameManager::sharedGameManager()->GetScore())
 	{
 		HighScore = GameManager::sharedGameManager()->GetScore();
 		HighScoreLabel->setString(StringUtils::format("%d", HighScore));

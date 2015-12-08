@@ -5,8 +5,13 @@
       <RootFolder Name=".">
         <Project Name="MainScene.csd" Type="Scene" />
         <Image Name="HelloWorld.png" />
-        <Image Name="Background.png" />
-        <Image Name="PLayer Tank.png" />
+        <Folder Name="Resources">
+          <Image Name="Barrel SpriteSheet.png" />
+          <Image Name="Enemy Tank.png" />
+          <Image Name="Wall.png" />
+          <Image Name="PLayer Tank.png" />
+          <Image Name="Background.png" />
+        </Folder>
       </RootFolder>
     </Group>
   </SolutionFolder>
