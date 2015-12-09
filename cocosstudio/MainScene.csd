@@ -14,7 +14,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.4998" Y="0.4994" />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="Resources/Background.png" Plist="" />
+            <FileData Type="Normal" Path="Background.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="Player" ActionTag="1613987195" Tag="4" IconVisible="False" LeftMargin="24.5000" RightMargin="1020.5000" TopMargin="327.0000" BottomMargin="237.0000" ctype="SpriteObjectData">
@@ -25,7 +25,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.0616" Y="0.4297" />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="Resources/PLayer Tank.png" Plist="" />
+            <FileData Type="Normal" Path="PLayer Tank.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="StartButton" ActionTag="1133545156" Tag="5" IconVisible="False" LeftMargin="552.0000" RightMargin="538.0000" TopMargin="297.0000" BottomMargin="307.0000" TouchEnable="True" FontSize="14" ButtonText="Start" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
