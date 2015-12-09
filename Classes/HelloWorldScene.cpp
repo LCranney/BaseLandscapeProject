@@ -2,6 +2,7 @@
 #include "cocostudio/CocoStudio.h"
 #include "GameManager.h"
 #include "ui/CocosGUI.h"
+#include "stdio.h"
 
 USING_NS_CC;
 
