@@ -62,6 +62,7 @@ private:
 	cocos2d::ui::Button*	Up_Button;
 	cocos2d::ui::Button*	Down_Button;
 	cocos2d::Sprite*		Tank;
+	cocos2d::Label*			HighScoreLabel;
 	int						HighScore;
 
 };
