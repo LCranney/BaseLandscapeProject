@@ -51,7 +51,8 @@ bool HelloWorld::init()
 	scoreLabel->setAnchorPoint(Vec2(0.5, 0));
 	
 	Highscore = (cocos2d::ui::Text*)rootNode->getChildByName("High");
-	Highscore->setPosition(Vec2(winSize.width*0.5f, 3 * (winSize.height*0.25f)));
+	Highscore->setPosition(Vec2(0-500.0f, 3 * (winSize.height*0.25f)));
+	Highscore->setAnchorPoint(Vec2(0.5, 0.5));
 	////TOUCHES
 	auto touchListener = EventListenerTouchOneByOne::create();
 
@@ -117,7 +118,7 @@ void HelloWorld::DownButtonPressed(Ref *pSender, cocos2d::ui::Widget::TouchEvent
 				Tank->setPosition(currentPos.x, currentPos.y -= 113);
 			}
 		}
-		//HelloWorld::EndGame();
+		HelloWorld::EndGame();
 	}
 }
 
@@ -138,8 +139,11 @@ void HelloWorld::StartGame()
 	auto winSize = Director::getInstance()->getVisibleSize();
 	GameManager::sharedGameManager()->isGameLive = true;
 
-	auto moveTo = MoveTo::create(0.5, Vec2(-winSize.width*0.5f, winSize.height*0.5f));
+	auto moveTo = MoveTo::create(0.0f, Vec2(-winSize.width*0.5f, winSize.height*0.5f));
 	StartButton->runAction(moveTo);
+
+	auto Highscorereset = MoveTo::create(0.0f, (Vec2(0 - 500.0f, 3 * (winSize.height*0.25f))));
+	Highscore->runAction(Highscorereset);
 
 	GameManager::sharedGameManager()->ResetScore();
 }
@@ -149,8 +153,11 @@ void HelloWorld::EndGame()
 	auto winSize = Director::getInstance()->getVisibleSize();
 	GameManager::sharedGameManager()->isGameLive = false;
 
-	auto moveTo = MoveTo::create(0.5, Vec2(winSize.width*0.5f, winSize.height*0.5f));
+	auto moveTo = MoveTo::create(0.0f, Vec2(winSize.width*0.5f, winSize.height*0.5f));
 	StartButton->runAction(moveTo);
+
+	auto Highscoremove = MoveTo::create(0.0f, Vec2(winSize.width*0.5f, 3*(winSize.height*0.25f)));
+	Highscore->runAction(Highscoremove);
 
 	if (GameManager::sharedGameManager()->GetScore() > HighScore)
 	{
@@ -665,17 +672,3 @@ void HelloWorld::update(float delta)
 		}
 	}
 }
-
-
-
-
-
-/*}
-				else if (10000 > score > 20000)
-				{
-					spawn = 2;
-				}
-				else if (20000 > score)
-				{
-					spawn = 3;
-				}*/
