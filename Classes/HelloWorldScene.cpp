@@ -176,94 +176,488 @@ void HelloWorld::update(float delta)
 		Vec2 currentPos = Tank->getPosition();
 		Tank->setPosition(currentPos.x, currentPos.y);
 
+
+
 		GameManager::sharedGameManager()->AddToScore(1);
 
 		int score = GameManager::sharedGameManager()->GetScore();
 
 		scoreLabel->setString(StringUtils::format("Score: %d", GameManager::sharedGameManager()->GetScore()));
 
-		if (score = 1000)
+		if (score % 250 == 0)
 		{
-			HelloWorld::EndGame();
-		}
-
-		/*		if (score % 250 == 0)
-				{
-				if (wave = false)
-				{
+			if (wave = false)
+			{
 				int spawn = 0;
 
 				if (score > 10000)
 				{
-				for (int i = 0; i < 1; i++)
-				{
-				while (row = false)
-				{
-				int rowNum = (CCRANDOM_0_1() * 3) + 1;
+					for (int i = 0; i < 1; i++)
+					{
+						while (row = false)
+						{
+							int rowNum = (CCRANDOM_0_1() * 3) + 1;
 
-				if (rowNum == 1)
-				{
-				while (row1 = false)
-				{
-				spawnX = 0;
-				spawnY = 0;
+							if (rowNum == 1)
+							{
+								while (row1 = false)
+								{
+									spawnX = 1136;
+									spawnY = 242;
 
-				row1 = true;
-				row = true;
-				}
-				}
-				else if (rowNum == 2)
-				{
-				while (row2 = false)
-				{
-				spawnX = 0;
-				spawnY = 0;
+									row1 = true;
+									row = true;
+								}
+							}
+							else if (rowNum == 2)
+							{
+								while (row2 = false)
+								{
+									spawnX = 1136;
+									spawnY = 355;
 
-				row2 = true;
-				row = true;
-				}
-				}
-				else if (rowNum == 3)
-				{
-				while (row3 = false)
-				{
-				spawnX = 0;
-				spawnY = 0;
+									row2 = true;
+									row = true;
+								}
+							}
+							else if (rowNum == 3)
+							{
+								while (row3 = false)
+								{
+									spawnX = 1136;
+									spawnY = 468;
 
-				row3 = true;
-				row = true;
-				}
-				}
-				else if (rowNum == 4)
-				{
-				while (row4 = false)
-				{
-				spawnX = 0;
-				spawnY = 0;
+									row3 = true;
+									row = true;
+								}
+							}
+							else if (rowNum == 4)
+							{
+								while (row4 = false)
+								{
+									spawnX = 1136;
+									spawnY = 581;
 
-				row4 = true;
-				row = true;
-				}
-				}
-				}
-				row = false;
+									row4 = true;
+									row = true;
+								}
+							}
+						}
+						row = false;
 
-				while (enemy = false)
+						while (enemy = false)
+						{
+							int enemyNum = (CCRANDOM_0_1() * 8) + 1;
+
+							if (enemyNum == 1)
+							{
+								while (tank1 = false)
+								{
+									EnemyTank(int spawnX, int spawnY);
+
+									tank1 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 2)
+							{
+								while (tank2 = false)
+								{
+									EnemyTank(int spawnX, int spawnY)
+
+										tank2 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 3)
+							{
+								while (tank3 = false)
+								{
+									EnemyTank(int spawnX, int spawnY);
+
+									tank3 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 4)
+							{
+								while (barrel1)
+								{
+									Barrel(int spawnX, int spawnY);
+
+									barrel1 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 5)
+							{
+								while (barrel2 = false)
+								{
+									Barrel(int spawnX, int spawnY);
+
+									barrel2 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 6)
+							{
+								while (barrel3 = false)
+								{
+									Barrel(int spawnX, int spawnY);
+
+									barrel3 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 7)
+							{
+								while (wall1 = false)
+								{
+									Wall(int spawnX, int spawnY);
+
+									wall1 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 8)
+							{
+								while (wall2 = true)
+								{
+									Wall(int spawnX, int spawnY);
+
+									wall2 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 9)
+							{
+								while (wall3 = true)
+								{
+									Wall(int spawnX, int spawnY);
+
+									wall3 = true;
+									enemy = true;
+								}
+							}
+						}
+						enemy = false;
+					}
+				}
+				else if (10000 < score < 20000)
 				{
-				int enemyNum = (CCRANDOM_0_1() * 11) + 1;
+					for (int i = 0; i < 2; i++)
+					{
+						while (row = false)
+						{
+							int rowNum = (CCRANDOM_0_1() * 3) + 1;
 
-				if (enemyNum == 1)
+							if (rowNum == 1)
+							{
+								while (row1 = false)
+								{
+									spawnX = 1136;
+									spawnY = 242;
+
+									row1 = true;
+									row = true;
+								}
+							}
+							else if (rowNum == 2)
+							{
+								while (row2 = false)
+								{
+									spawnX = 1136;
+									spawnY = 355;
+
+									row2 = true;
+									row = true;
+								}
+							}
+							else if (rowNum == 3)
+							{
+								while (row3 = false)
+								{
+									spawnX = 1136;
+									spawnY = 468;
+
+									row3 = true;
+									row = true;
+								}
+							}
+							else if (rowNum == 4)
+							{
+								while (row4 = false)
+								{
+									spawnX = 1136;
+									spawnY = 581;
+
+									row4 = true;
+									row = true;
+								}
+							}
+						}
+						row = false;
+
+						while (enemy = false)
+						{
+							int enemyNum = (CCRANDOM_0_1() * 8) + 1;
+
+							if (enemyNum == 1)
+							{
+								while (tank1 = false)
+								{
+									EnemyTank(int spawnX, int spawnY);
+
+									tank1 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 2)
+							{
+								while (tank2 = false)
+								{
+									EnemyTank(int spawnX, int spawnY)
+
+										tank2 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 3)
+							{
+								while (tank3 = false)
+								{
+									EnemyTank(int spawnX, int spawnY);
+
+									tank3 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 4)
+							{
+								while (barrel1)
+								{
+									Barrel(int spawnX, int spawnY);
+
+									barrel1 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 5)
+							{
+								while (barrel2 = false)
+								{
+									Barrel(int spawnX, int spawnY);
+
+									barrel2 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 6)
+							{
+								while (barrel3 = false)
+								{
+									Barrel(int spawnX, int spawnY);
+
+									barrel3 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 7)
+							{
+								while (wall1 = false)
+								{
+									Wall(int spawnX, int spawnY);
+
+									wall1 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 8)
+							{
+								while (wall2 = true)
+								{
+									Wall(int spawnX, int spawnY);
+
+									wall2 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 9)
+							{
+								while (wall3 = true)
+								{
+									Wall(int spawnX, int spawnY);
+
+									wall3 = true;
+									enemy = true;
+								}
+							}
+						}
+						enemy = false;
+					}
+				}
+				else if (20000 < score)
 				{
+					for (int i = 0; i < 3; i++)
+					{
+						while (row = false)
+						{
+							int rowNum = (CCRANDOM_0_1() * 3) + 1;
 
+							if (rowNum == 1)
+							{
+								while (row1 = false)
+								{
+									spawnX = 1136;
+									spawnY = 242;
+
+									row1 = true;
+									row = true;
+								}
+							}
+							else if (rowNum == 2)
+							{
+								while (row2 = false)
+								{
+									spawnX = 1136;
+									spawnY = 355;
+
+									row2 = true;
+									row = true;
+								}
+							}
+							else if (rowNum == 3)
+							{
+								while (row3 = false)
+								{
+									spawnX = 1136;
+									spawnY = 468;
+
+									row3 = true;
+									row = true;
+								}
+							}
+							else if (rowNum == 4)
+							{
+								while (row4 = false)
+								{
+									spawnX = 1136;
+									spawnY = 581;
+
+									row4 = true;
+									row = true;
+								}
+							}
+						}
+						row = false;
+
+						while (enemy = false)
+						{
+							int enemyNum = (CCRANDOM_0_1() * 8) + 1;
+
+							if (enemyNum == 1)
+							{
+								while (tank1 = false)
+								{
+									EnemyTank(int spawnX, int spawnY);
+
+									tank1 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 2)
+							{
+								while (tank2 = false)
+								{
+									EnemyTank(int spawnX, int spawnY)
+
+										tank2 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 3)
+							{
+								while (tank3 = false)
+								{
+									EnemyTank(int spawnX, int spawnY);
+
+									tank3 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 4)
+							{
+								while (barrel1)
+								{
+									Barrel(int spawnX, int spawnY);
+
+									barrel1 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 5)
+							{
+								while (barrel2 = false)
+								{
+									Barrel(int spawnX, int spawnY);
+
+									barrel2 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 6)
+							{
+								while (barrel3 = false)
+								{
+									Barrel(int spawnX, int spawnY);
+
+									barrel3 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 7)
+							{
+								while (wall1 = false)
+								{
+									Wall(int spawnX, int spawnY);
+
+									wall1 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 8)
+							{
+								while (wall2 = true)
+								{
+									Wall(int spawnX, int spawnY);
+
+									wall2 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 9)
+							{
+								while (wall3 = true)
+								{
+									Wall(int spawnX, int spawnY);
+
+									wall3 = true;
+									enemy = true;
+								}
+							}
+						}
+						enemy = false;
+					}
 				}
-				}
-				}
-				}
-				}
-				}
-				}*/
+			}
+		}
 	}
 }
+
+
+
+
+
 /*}
 				else if (10000 > score > 20000)
 				{
