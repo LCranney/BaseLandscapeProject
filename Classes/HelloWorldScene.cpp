@@ -47,8 +47,11 @@ bool HelloWorld::init()
 	Tank = (Sprite*)rootNode->getChildByName("Player");
 
 	scoreLabel = (cocos2d::ui::Text*)rootNode->getChildByName("label");
+	scoreLabel->setPosition(Vec2(winSize.width*0.5f, 0));
+	scoreLabel->setAnchorPoint(Vec2(0.5, 0));
+	
 	Highscore = (cocos2d::ui::Text*)rootNode->getChildByName("High");
-
+	Highscore->setPosition(Vec2(winSize.width*0.5f, 3 * (winSize.height*0.25f)));
 	////TOUCHES
 	auto touchListener = EventListenerTouchOneByOne::create();
 
@@ -67,11 +70,15 @@ bool HelloWorld::init()
 
 	Up_Button = static_cast<ui::Button*>(rootNode->getChildByName("Up_Button"));
 	Up_Button->addTouchEventListener(CC_CALLBACK_2(HelloWorld::UpButtonPressed, this));
+	Up_Button->setAnchorPoint(Vec2(0, 0));
 	Up_Button->setPosition(Vec2(0, 0));
+	Up_Button->setScale(3.0f);
 
 	Down_Button = static_cast<ui::Button*>(rootNode->getChildByName("Down_Button"));
 	Down_Button->addTouchEventListener(CC_CALLBACK_2(HelloWorld::DownButtonPressed, this));
+	Down_Button->setAnchorPoint(Vec2(1, 0));
 	Down_Button->setPosition(Vec2(winSize.width, 0));
+	Down_Button->setScale(3.0f);
 
 	GameManager::sharedGameManager()->isGameLive = false;
 
@@ -110,7 +117,7 @@ void HelloWorld::DownButtonPressed(Ref *pSender, cocos2d::ui::Widget::TouchEvent
 				Tank->setPosition(currentPos.x, currentPos.y -= 113);
 			}
 		}
-		HelloWorld::EndGame();
+		//HelloWorld::EndGame();
 	}
 }
 
