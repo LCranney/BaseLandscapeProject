@@ -42,7 +42,7 @@ bool HelloWorld::init()
 	HighScore = 0;
 	Tank = (Sprite*)rootNode->getChildByName("Player");
 
-	HighScoreLabel = (Label*)rootNode->getChildByName("HighScoreLabel");
+	HighScoreLabel = static_cast<ui::Text*>(rootNode->getChildByName("HighScoreLabel"));
 
 	////TOUCHES
 	auto touchListener = EventListenerTouchOneByOne::create();
