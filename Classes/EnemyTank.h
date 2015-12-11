@@ -21,7 +21,6 @@ public:
 	void    update(float);
 
 	bool    hasCollidedWithAEnemyTank(cocos2d::Rect collisionBoxToCheck);
-	void    reset();
 
 private:
 	cocos2d::Sprite* Enemy_Tank;

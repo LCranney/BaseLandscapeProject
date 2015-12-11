@@ -60,4 +60,10 @@ bool EnemyTank::hasCollidedWithAEnemyTank(Rect collisionBoxToCheck)
 	Rect modifiedEnemyTank;
 	modifiedEnemyTank.size = Enemy_Tank->getBoundingBox().size;
 	modifiedEnemyTank.origin = convertToWorldSpaceAR(Enemy_Tank->getBoundingBox().origin);
+
+	if (modifiedEnemyTank.intersectsRect(collisionBoxToCheck))
+	{
+		return true;
+	}
+	return false;
 }
