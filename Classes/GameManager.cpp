@@ -17,6 +17,7 @@ GameManager* GameManager::sharedGameManager()
 GameManager::GameManager()
 {
 	isGameLive = false;
+	score = 0;
 }
 
 GameManager::~GameManager()

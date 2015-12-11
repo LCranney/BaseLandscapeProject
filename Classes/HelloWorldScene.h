@@ -30,6 +30,8 @@ public:
 	void StartGame();
 	void EndGame();
 
+	int score;
+	int spawn;
 	int spawnX;
 	int spawnY;
 	bool wave;
@@ -58,6 +60,8 @@ public:
 	bool row5;
 
 private:
+	cocos2d::ui::Text*      scoreLabel;
+	cocos2d::ui::Text*      Highscore;
 	cocos2d::ui::Button*	StartButton;
 	cocos2d::ui::Button*	Up_Button;
 	cocos2d::ui::Button*	Down_Button;

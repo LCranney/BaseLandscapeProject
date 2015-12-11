@@ -2,6 +2,7 @@
 #include "cocostudio/CocoStudio.h"
 #include "GameManager.h"
 #include "ui/CocosGUI.h"
+#include "stdio.h"
 
 USING_NS_CC;
 
@@ -41,6 +42,9 @@ bool HelloWorld::init()
 	auto winSize = Director::getInstance()->getVisibleSize();
 	HighScore = 0;
 	Tank = (Sprite*)rootNode->getChildByName("Player");
+
+	scoreLabel = (cocos2d::ui::Text*)rootNode->getChildByName("label");
+	Highscore = (cocos2d::ui::Text*)rootNode->getChildByName("High");
 
 	////TOUCHES
 	auto touchListener = EventListenerTouchOneByOne::create();
@@ -101,6 +105,7 @@ void HelloWorld::DownButtonPressed(Ref *pSender, cocos2d::ui::Widget::TouchEvent
 				Tank->setPosition(currentPos.x, currentPos.y -= 113);
 			}
 		}
+		HelloWorld::EndGame();
 	}
 }
 
@@ -123,6 +128,8 @@ void HelloWorld::StartGame()
 
 	auto moveTo = MoveTo::create(0.5, Vec2(-winSize.width*0.5f, winSize.height*0.5f));
 	StartButton->runAction(moveTo);
+
+	GameManager::sharedGameManager()->ResetScore();
 }
 
 void HelloWorld::EndGame()
@@ -132,6 +139,13 @@ void HelloWorld::EndGame()
 
 	auto moveTo = MoveTo::create(0.5, Vec2(winSize.width*0.5f, winSize.height*0.5f));
 	StartButton->runAction(moveTo);
+
+	if (GameManager::sharedGameManager()->GetScore() > HighScore)
+	{
+		HighScore = GameManager::sharedGameManager()->GetScore();
+		Highscore->setString(StringUtils::format("High Score: %d", HighScore));
+	}
+	
 }
 
 bool HelloWorld::onTouchBegan(Touch* touch, Event* event)
@@ -157,21 +171,105 @@ void HelloWorld::onTouchCancelled(Touch* touch, Event* event)
 
 void HelloWorld::update(float delta)
 {
-
-	GameManager::sharedGameManager()->AddToScore(1);
 	if (GameManager::sharedGameManager()->isGameLive)
 	{
 		Vec2 currentPos = Tank->getPosition();
 		Tank->setPosition(currentPos.x, currentPos.y);
 
+		GameManager::sharedGameManager()->AddToScore(1);
+
 		int score = GameManager::sharedGameManager()->GetScore();
-		if (score % 60 == 0)
+
+		scoreLabel->setString(StringUtils::format("Score: %d", GameManager::sharedGameManager()->GetScore()));
+
+		if (score = 1000)
 		{
-			if (wave = false)
-			{
-
-			}
+			HelloWorld::EndGame();
 		}
-	}
 
+		/*		if (score % 250 == 0)
+				{
+				if (wave = false)
+				{
+				int spawn = 0;
+
+				if (score > 10000)
+				{
+				for (int i = 0; i < 1; i++)
+				{
+				while (row = false)
+				{
+				int rowNum = (CCRANDOM_0_1() * 3) + 1;
+
+				if (rowNum == 1)
+				{
+				while (row1 = false)
+				{
+				spawnX = 0;
+				spawnY = 0;
+
+				row1 = true;
+				row = true;
+				}
+				}
+				else if (rowNum == 2)
+				{
+				while (row2 = false)
+				{
+				spawnX = 0;
+				spawnY = 0;
+
+				row2 = true;
+				row = true;
+				}
+				}
+				else if (rowNum == 3)
+				{
+				while (row3 = false)
+				{
+				spawnX = 0;
+				spawnY = 0;
+
+				row3 = true;
+				row = true;
+				}
+				}
+				else if (rowNum == 4)
+				{
+				while (row4 = false)
+				{
+				spawnX = 0;
+				spawnY = 0;
+
+				row4 = true;
+				row = true;
+				}
+				}
+				}
+				row = false;
+
+				while (enemy = false)
+				{
+				int enemyNum = (CCRANDOM_0_1() * 11) + 1;
+
+				if (enemyNum == 1)
+				{
+
+				}
+				}
+				}
+				}
+				}
+				}
+				}*/
+	}
 }
+/*}
+				else if (10000 > score > 20000)
+				{
+					spawn = 2;
+				}
+				else if (20000 > score)
+				{
+					spawn = 3;
+				}*/
