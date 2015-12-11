@@ -3,6 +3,9 @@
 #include "GameManager.h"
 #include "ui/CocosGUI.h"
 #include "stdio.h"
+#include "EnemyTank.h"
+#include "Wall.h"
+#include "Barrel.h"
 
 USING_NS_CC;
 
@@ -64,9 +67,11 @@ bool HelloWorld::init()
 
 	Up_Button = static_cast<ui::Button*>(rootNode->getChildByName("Up_Button"));
 	Up_Button->addTouchEventListener(CC_CALLBACK_2(HelloWorld::UpButtonPressed, this));
+	Up_Button->setPosition(Vec2(0, 0));
 
 	Down_Button = static_cast<ui::Button*>(rootNode->getChildByName("Down_Button"));
 	Down_Button->addTouchEventListener(CC_CALLBACK_2(HelloWorld::DownButtonPressed, this));
+	Down_Button->setPosition(Vec2(winSize.width, 0));
 
 	GameManager::sharedGameManager()->isGameLive = false;
 
@@ -253,7 +258,7 @@ void HelloWorld::update(float delta)
 							{
 								while (tank1 = false)
 								{
-									EnemyTank(int spawnX, int spawnY);
+									EnemyTank(spawnX, spawnY);
 
 									tank1 = true;
 									enemy = true;
@@ -263,9 +268,9 @@ void HelloWorld::update(float delta)
 							{
 								while (tank2 = false)
 								{
-									EnemyTank(int spawnX, int spawnY)
+									EnemyTank(spawnX, spawnY);
 
-										tank2 = true;
+									tank2 = true;
 									enemy = true;
 								}
 							}
@@ -273,7 +278,7 @@ void HelloWorld::update(float delta)
 							{
 								while (tank3 = false)
 								{
-									EnemyTank(int spawnX, int spawnY);
+									EnemyTank(spawnX, spawnY);
 
 									tank3 = true;
 									enemy = true;
@@ -283,7 +288,7 @@ void HelloWorld::update(float delta)
 							{
 								while (barrel1)
 								{
-									Barrel(int spawnX, int spawnY);
+									Barrel(spawnX, spawnY);
 
 									barrel1 = true;
 									enemy = true;
@@ -293,7 +298,7 @@ void HelloWorld::update(float delta)
 							{
 								while (barrel2 = false)
 								{
-									Barrel(int spawnX, int spawnY);
+									Barrel(spawnX, spawnY);
 
 									barrel2 = true;
 									enemy = true;
@@ -303,7 +308,7 @@ void HelloWorld::update(float delta)
 							{
 								while (barrel3 = false)
 								{
-									Barrel(int spawnX, int spawnY);
+									Barrel(spawnX, spawnY);
 
 									barrel3 = true;
 									enemy = true;
@@ -313,7 +318,7 @@ void HelloWorld::update(float delta)
 							{
 								while (wall1 = false)
 								{
-									Wall(int spawnX, int spawnY);
+									Wall(spawnX, spawnY);
 
 									wall1 = true;
 									enemy = true;
@@ -323,7 +328,7 @@ void HelloWorld::update(float delta)
 							{
 								while (wall2 = true)
 								{
-									Wall(int spawnX, int spawnY);
+									Wall(spawnX, spawnY);
 
 									wall2 = true;
 									enemy = true;
@@ -333,7 +338,7 @@ void HelloWorld::update(float delta)
 							{
 								while (wall3 = true)
 								{
-									Wall(int spawnX, int spawnY);
+									Wall(spawnX, spawnY);
 
 									wall3 = true;
 									enemy = true;
@@ -406,7 +411,7 @@ void HelloWorld::update(float delta)
 							{
 								while (tank1 = false)
 								{
-									EnemyTank(int spawnX, int spawnY);
+									EnemyTank(spawnX, spawnY);
 
 									tank1 = true;
 									enemy = true;
@@ -416,9 +421,9 @@ void HelloWorld::update(float delta)
 							{
 								while (tank2 = false)
 								{
-									EnemyTank(int spawnX, int spawnY)
+									EnemyTank(spawnX, spawnY);
 
-										tank2 = true;
+									tank2 = true;
 									enemy = true;
 								}
 							}
@@ -426,7 +431,7 @@ void HelloWorld::update(float delta)
 							{
 								while (tank3 = false)
 								{
-									EnemyTank(int spawnX, int spawnY);
+									EnemyTank(spawnX, spawnY);
 
 									tank3 = true;
 									enemy = true;
@@ -436,7 +441,7 @@ void HelloWorld::update(float delta)
 							{
 								while (barrel1)
 								{
-									Barrel(int spawnX, int spawnY);
+									Barrel(spawnX, spawnY);
 
 									barrel1 = true;
 									enemy = true;
@@ -446,7 +451,7 @@ void HelloWorld::update(float delta)
 							{
 								while (barrel2 = false)
 								{
-									Barrel(int spawnX, int spawnY);
+									Barrel(spawnX, spawnY);
 
 									barrel2 = true;
 									enemy = true;
@@ -456,7 +461,7 @@ void HelloWorld::update(float delta)
 							{
 								while (barrel3 = false)
 								{
-									Barrel(int spawnX, int spawnY);
+									Barrel(spawnX, spawnY);
 
 									barrel3 = true;
 									enemy = true;
@@ -466,7 +471,7 @@ void HelloWorld::update(float delta)
 							{
 								while (wall1 = false)
 								{
-									Wall(int spawnX, int spawnY);
+									Wall(spawnX, spawnY);
 
 									wall1 = true;
 									enemy = true;
@@ -476,7 +481,7 @@ void HelloWorld::update(float delta)
 							{
 								while (wall2 = true)
 								{
-									Wall(int spawnX, int spawnY);
+									Wall(spawnX, spawnY);
 
 									wall2 = true;
 									enemy = true;
@@ -486,7 +491,7 @@ void HelloWorld::update(float delta)
 							{
 								while (wall3 = true)
 								{
-									Wall(int spawnX, int spawnY);
+									Wall(spawnX, spawnY);
 
 									wall3 = true;
 									enemy = true;
@@ -559,7 +564,7 @@ void HelloWorld::update(float delta)
 							{
 								while (tank1 = false)
 								{
-									EnemyTank(int spawnX, int spawnY);
+									EnemyTank(spawnX, spawnY);
 
 									tank1 = true;
 									enemy = true;
@@ -569,9 +574,9 @@ void HelloWorld::update(float delta)
 							{
 								while (tank2 = false)
 								{
-									EnemyTank(int spawnX, int spawnY)
+									EnemyTank(spawnX, spawnY);
 
-										tank2 = true;
+									tank2 = true;
 									enemy = true;
 								}
 							}
@@ -579,7 +584,7 @@ void HelloWorld::update(float delta)
 							{
 								while (tank3 = false)
 								{
-									EnemyTank(int spawnX, int spawnY);
+									EnemyTank(spawnX, spawnY);
 
 									tank3 = true;
 									enemy = true;
@@ -589,7 +594,7 @@ void HelloWorld::update(float delta)
 							{
 								while (barrel1)
 								{
-									Barrel(int spawnX, int spawnY);
+									Barrel(spawnX, spawnY);
 
 									barrel1 = true;
 									enemy = true;
@@ -599,7 +604,7 @@ void HelloWorld::update(float delta)
 							{
 								while (barrel2 = false)
 								{
-									Barrel(int spawnX, int spawnY);
+									Barrel(spawnX, spawnY);
 
 									barrel2 = true;
 									enemy = true;
@@ -609,7 +614,7 @@ void HelloWorld::update(float delta)
 							{
 								while (barrel3 = false)
 								{
-									Barrel(int spawnX, int spawnY);
+									Barrel(spawnX, spawnY);
 
 									barrel3 = true;
 									enemy = true;
@@ -619,7 +624,7 @@ void HelloWorld::update(float delta)
 							{
 								while (wall1 = false)
 								{
-									Wall(int spawnX, int spawnY);
+									Wall(spawnX, spawnY);
 
 									wall1 = true;
 									enemy = true;
@@ -629,7 +634,7 @@ void HelloWorld::update(float delta)
 							{
 								while (wall2 = true)
 								{
-									Wall(int spawnX, int spawnY);
+									Wall(spawnX, spawnY);
 
 									wall2 = true;
 									enemy = true;
@@ -639,7 +644,7 @@ void HelloWorld::update(float delta)
 							{
 								while (wall3 = true)
 								{
-									Wall(int spawnX, int spawnY);
+									Wall(spawnX, spawnY);
 
 									wall3 = true;
 									enemy = true;

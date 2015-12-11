@@ -148,7 +148,7 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 560.223,
+              "X": 567.0,
               "Y": 292.3841
             },
             "Scale": {
@@ -158,15 +158,15 @@
             "CColor": {},
             "IconVisible": false,
             "PrePosition": {
-              "X": 0.4932,
+              "X": 0.4991,
               "Y": 0.4569
             },
             "PreSize": {
               "X": 0.0,
               "Y": 0.0
             },
-            "LeftMargin": 537.223,
-            "RightMargin": 552.777,
+            "LeftMargin": 544.0,
+            "RightMargin": 546.0,
             "TopMargin": 329.6159,
             "BottomMargin": 274.3841,
             "Tag": 5,
@@ -218,13 +218,10 @@
             "ShadowOffsetX": 2.0,
             "ShadowOffsetY": -2.0,
             "TouchEnable": true,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
+            "AnchorPoint": {},
             "Position": {
-              "X": 68.058,
-              "Y": 38.1978
+              "X": 1.2913,
+              "Y": -2.81
             },
             "Scale": {
               "ScaleX": 2.9029,
@@ -237,17 +234,17 @@
             },
             "IconVisible": false,
             "PrePosition": {
-              "X": 0.0599,
-              "Y": 0.0597
+              "X": 0.0011,
+              "Y": -0.0044
             },
             "PreSize": {
               "X": 0.0405,
               "Y": 0.0547
             },
-            "LeftMargin": 45.058,
-            "RightMargin": 1044.942,
-            "TopMargin": 584.3022,
-            "BottomMargin": 20.6978,
+            "LeftMargin": 1.2913,
+            "RightMargin": 1088.7087,
+            "TopMargin": 607.8099,
+            "BottomMargin": -2.81,
             "Tag": 6,
             "ActionTag": -141458588,
             "Size": {
@@ -298,12 +295,11 @@
             "ShadowOffsetY": -2.0,
             "TouchEnable": true,
             "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
+              "ScaleX": 1.0
             },
             "Position": {
-              "X": 1072.0281,
-              "Y": 40.5483
+              "X": 1138.7959,
+              "Y": -2.5366
             },
             "Scale": {
               "ScaleX": 2.9029,
@@ -316,17 +312,17 @@
             },
             "IconVisible": false,
             "PrePosition": {
-              "X": 0.9437,
-              "Y": 0.0634
+              "X": 1.0025,
+              "Y": -0.004
             },
             "PreSize": {
               "X": 0.0405,
               "Y": 0.0547
             },
-            "LeftMargin": 1049.0281,
-            "RightMargin": 40.9719,
-            "TopMargin": 581.9517,
-            "BottomMargin": 23.0483,
+            "LeftMargin": 1092.7959,
+            "RightMargin": -2.7959,
+            "TopMargin": 607.5366,
+            "BottomMargin": -2.5366,
             "Tag": 7,
             "ActionTag": 809064357,
             "Size": {
@@ -339,6 +335,8 @@
           {
             "FontSize": 20,
             "LabelText": "0",
+            "HorizontalAlignmentType": "HT_Center",
+            "VerticalAlignmentType": "VT_Bottom",
             "OutlineColor": {
               "G": 0,
               "B": 0
@@ -355,7 +353,7 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 554.1317,
+              "X": 567.0,
               "Y": 41.1193
             },
             "Scale": {
@@ -365,15 +363,15 @@
             "CColor": {},
             "IconVisible": false,
             "PrePosition": {
-              "X": 0.4878,
+              "X": 0.4991,
               "Y": 0.0642
             },
             "PreSize": {
               "X": 0.0,
               "Y": 0.0
             },
-            "LeftMargin": 548.6317,
-            "RightMargin": 576.3683,
+            "LeftMargin": 561.5,
+            "RightMargin": 563.5,
             "TopMargin": 587.3807,
             "BottomMargin": 29.6193,
             "Tag": 9,
@@ -388,6 +386,7 @@
           {
             "FontSize": 20,
             "LabelText": "",
+            "HorizontalAlignmentType": "HT_Center",
             "OutlineColor": {
               "G": 0,
               "B": 0
