@@ -11,6 +11,8 @@
         <Image Name="Wall.png" />
         <Project Name="Enemy_Tank.csd" Type="Node" />
         <Image Name="Enemy Tank.png" />
+        <Project Name="barrel.csd" Type="Node" />
+        <Image Name="Barrel SpriteSheet.png" />
       </RootFolder>
     </Group>
   </SolutionFolder>
