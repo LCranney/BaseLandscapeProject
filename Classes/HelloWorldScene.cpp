@@ -44,11 +44,9 @@ bool HelloWorld::init()
 	this->scheduleUpdate();
 	auto winSize = Director::getInstance()->getVisibleSize();
 	HighScore = 0;
+	Health = 20;
 	Tank = (Sprite*)rootNode->getChildByName("Player");
 
-	/*pipeNode = (Node*)rootNode->getChildByName("pipeNode");
-	pipes = Pipe::create();
-	pipeNode->addChild(pipes)*/
 	enemyTankNode = (Node*)rootNode->getChildByName("enemyTankNode");
 	enemyTank = EnemyTank::create();
 	enemyTankNode->addChild(enemyTank);
@@ -133,7 +131,7 @@ void HelloWorld::DownButtonPressed(Ref *pSender, cocos2d::ui::Widget::TouchEvent
 				Tank->setPosition(currentPos.x, currentPos.y -= 113);
 			}
 		}
-		HelloWorld::EndGame();
+		
 	}
 }
 
@@ -153,9 +151,12 @@ void HelloWorld::StartGame()
 {
 	auto winSize = Director::getInstance()->getVisibleSize();
 	GameManager::sharedGameManager()->isGameLive = true;
+	Vec2 currentPos = Tank->getPosition();
 
 	auto moveTo = MoveTo::create(0.0f, Vec2(-winSize.width*0.5f, winSize.height*0.5f));
 	StartButton->runAction(moveTo);
+
+	Tank->setPosition(currentPos.x, currentPos.y);
 
 	auto Highscorereset = MoveTo::create(0.0f, (Vec2(0 - 500.0f, 3 * (winSize.height*0.25f))));
 	Highscore->runAction(Highscorereset);
@@ -683,15 +684,19 @@ void HelloWorld::update(float delta)
 
 		if (enemyTank->hasCollidedWithAEnemyTank(Tank->getBoundingBox()))
 		{
-
+			Health = Health - 3;
 		}
 		if (wall->hasCollidedWithAWall(Tank->getBoundingBox()))
 		{
-
+			Health = Health - 2;
 		}
 		if (barrel->hasCollidedWithABarrel(Tank->getBoundingBox()))
 		{
-
+			Health = Health - 1;
+		}
+		if (Health == 0)
+		{
+			this->EndGame();
 		}
 
 	}

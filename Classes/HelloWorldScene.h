@@ -74,6 +74,7 @@ private:
 	cocos2d::Node*          enemyTankNode;
 	cocos2d::Node*          barrelNode;
 	int						HighScore;
+	int						Health;
 	Wall*					wall;
 	EnemyTank*				enemyTank;
 	Barrel*					barrel;
