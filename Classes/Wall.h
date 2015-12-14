@@ -1,17 +1,31 @@
-#ifndef __Wall_H__
-#define __Wall_H__
+//
+//  Wall.h
+//  CocosProject
+//
 
-#include "cocos2d.h"
-#include "ui/CocosGUI.h"
+#ifndef __CocosProject__Wall__
+#define __CocosProject__Wall__
 
-class Wall
+#include <stdio.h>
+
+
+class Wall : public cocos2d::Node
 {
 public:
-	Wall(int x, int y);
+	Wall();
 	~Wall();
 
-	bool Dead;
-	int speed;
+	virtual bool init() override;
+	static Wall* create();
+
+	void    update(float);
+
+	bool    hasCollidedWithAWall(cocos2d::Rect collisionBoxToCheck);
+
+private:
+	cocos2d::Sprite* wall;
+	float       currentSpeed;
+
 
 };
-#endif
+#endif 

@@ -55,7 +55,7 @@
               "X": 1136.0,
               "Y": 640.0
             },
-            "Name": "Sprite_1",
+            "Name": "Background",
             "ctype": "SpriteObjectData"
           },
           {
@@ -220,8 +220,8 @@
             "TouchEnable": true,
             "AnchorPoint": {},
             "Position": {
-              "X": 1.2913,
-              "Y": -2.81
+              "X": 0.0,
+              "Y": 0.0
             },
             "Scale": {
               "ScaleX": 2.9029,
@@ -234,21 +234,19 @@
             },
             "IconVisible": false,
             "PrePosition": {
-              "X": 0.0011,
-              "Y": -0.0044
+              "X": 0.0,
+              "Y": 0.0
             },
             "PreSize": {
-              "X": 0.0405,
+              "X": 0.0396,
               "Y": 0.0547
             },
-            "LeftMargin": 1.2913,
-            "RightMargin": 1088.7087,
-            "TopMargin": 607.8099,
-            "BottomMargin": -2.81,
+            "RightMargin": 1091.0,
+            "TopMargin": 605.0,
             "Tag": 6,
             "ActionTag": -141458588,
             "Size": {
-              "X": 46.0,
+              "X": 45.0,
               "Y": 35.0
             },
             "Name": "Up_Button",
@@ -298,8 +296,8 @@
               "ScaleX": 1.0
             },
             "Position": {
-              "X": 1138.7959,
-              "Y": -2.5366
+              "X": 1136.0,
+              "Y": 0.0
             },
             "Scale": {
               "ScaleX": 2.9029,
@@ -312,17 +310,15 @@
             },
             "IconVisible": false,
             "PrePosition": {
-              "X": 1.0025,
-              "Y": -0.004
+              "X": 1.0,
+              "Y": 0.0
             },
             "PreSize": {
               "X": 0.0405,
               "Y": 0.0547
             },
-            "LeftMargin": 1092.7959,
-            "RightMargin": -2.7959,
-            "TopMargin": 607.5366,
-            "BottomMargin": -2.5366,
+            "LeftMargin": 1090.0,
+            "TopMargin": 605.0,
             "Tag": 7,
             "ActionTag": 809064357,
             "Size": {
