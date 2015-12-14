@@ -1,17 +1,31 @@
-#ifndef __EnemyTank_H__
-#define __EnemyTank_H__
+//
+//  EnemyTank.h
+//  CocosProject
+//
 
-#include "cocos2d.h"
-#include "ui/CocosGUI.h"
+#ifndef __CocosProject__EnemyTank__
+#define __CocosProject__EnemyTank__
 
-class EnemyTank
+#include <stdio.h>
+
+
+class EnemyTank : public cocos2d::Node
 {
-public: 
-	EnemyTank(int x, int y);
+public:
+	EnemyTank();
 	~EnemyTank();
 
-	bool Dead;
-	int speed;
+	virtual bool init() override;
+	static EnemyTank* create();
+
+	void    update(float);
+
+	bool    hasCollidedWithAEnemyTank(cocos2d::Rect collisionBoxToCheck);
+
+private:
+	cocos2d::Sprite* Enemy_Tank;
+	float       currentSpeed;
+
 
 };
-#endif
+#endif 

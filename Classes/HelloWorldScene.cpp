@@ -46,6 +46,21 @@ bool HelloWorld::init()
 	HighScore = 0;
 	Tank = (Sprite*)rootNode->getChildByName("Player");
 
+	/*pipeNode = (Node*)rootNode->getChildByName("pipeNode");
+	pipes = Pipe::create();
+	pipeNode->addChild(pipes)*/
+	enemyTankNode = (Node*)rootNode->getChildByName("enemyTankNode");
+	enemyTank = EnemyTank::create();
+	enemyTankNode->addChild(enemyTank);
+
+	wallNode = (Node*)rootNode->getChildByName("wallNode");
+	wall = Wall::create();
+	wallNode->addChild(wall);
+
+	barrelNode = (Node*)rootNode->getChildByName("barrelNode");
+	barrel = Barrel::create();
+	barrelNode->addChild(barrel);
+
 	scoreLabel = (cocos2d::ui::Text*)rootNode->getChildByName("label");
 	scoreLabel->setPosition(Vec2(winSize.width*0.5f, 0));
 	scoreLabel->setAnchorPoint(Vec2(0.5, 0));
@@ -665,5 +680,19 @@ void HelloWorld::update(float delta)
 				}
 			}
 		}
+
+		if (enemyTank->hasCollidedWithAEnemyTank(Tank->getBoundingBox()))
+		{
+
+		}
+		if (wall->hasCollidedWithAWall(Tank->getBoundingBox()))
+		{
+
+		}
+		if (barrel->hasCollidedWithABarrel(Tank->getBoundingBox()))
+		{
+
+		}
+
 	}
 }

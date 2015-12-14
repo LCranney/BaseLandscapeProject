@@ -4,6 +4,10 @@
 #include "cocos2d.h"
 #include "ui/CocosGUI.h"
 
+class EnemyTank;
+class Wall;
+class Barrel;
+
 class HelloWorld : public cocos2d::Layer
 {
 public:
@@ -66,7 +70,13 @@ private:
 	cocos2d::ui::Button*	Up_Button;
 	cocos2d::ui::Button*	Down_Button;
 	cocos2d::Sprite*		Tank;
+	cocos2d::Node*          wallNode;
+	cocos2d::Node*          enemyTankNode;
+	cocos2d::Node*          barrelNode;
 	int						HighScore;
+	Wall*					wall;
+	EnemyTank*				enemyTank;
+	Barrel*					barrel;
 
 };
 

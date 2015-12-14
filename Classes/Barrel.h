@@ -1,17 +1,31 @@
-#ifndef __Barrel_H__
-#define __Barrel_H__
+//
+//  Barrel.h
+//  CocosProject
+//
 
-#include "cocos2d.h"
-#include "ui/CocosGUI.h"
+#ifndef __CocosProject__Barrel__
+#define __CocosProject__Barrel__
 
-class Barrel
+#include <stdio.h>
+
+
+class Barrel : public cocos2d::Node
 {
 public:
-	Barrel(int x, int y);
+	Barrel();
 	~Barrel();
 
-	bool Dead;
-	int speed;
+	virtual bool init() override;
+	static Barrel* create();
+
+	void    update(float);
+
+	bool    hasCollidedWithABarrel(cocos2d::Rect collisionBoxToCheck);
+
+private:
+	cocos2d::Sprite* barrel;
+	float       currentSpeed;
+
 
 };
-#endif
+#endif 

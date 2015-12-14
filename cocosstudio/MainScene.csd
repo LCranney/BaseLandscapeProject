@@ -6,7 +6,7 @@
       <ObjectData Name="Scene" ctype="GameNodeObjectData">
         <Size X="1136.0000" Y="640.0000" />
         <Children>
-          <AbstractNodeData Name="Sprite_1" ActionTag="1256961913" Tag="3" IconVisible="False" LeftMargin="-0.2594" RightMargin="0.2594" TopMargin="0.3762" BottomMargin="-0.3762" ctype="SpriteObjectData">
+          <AbstractNodeData Name="Background" ActionTag="1256961913" Tag="3" IconVisible="False" LeftMargin="-0.2594" RightMargin="0.2594" TopMargin="0.3762" BottomMargin="-0.3762" ctype="SpriteObjectData">
             <Size X="1136.0000" Y="640.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="567.7406" Y="319.6238" />
@@ -43,14 +43,14 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Up_Button" ActionTag="-141458588" Tag="6" IconVisible="False" LeftMargin="1.2913" RightMargin="1088.7087" TopMargin="607.8099" BottomMargin="-2.8100" TouchEnable="True" FontSize="14" ButtonText="UP" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="46.0000" Y="35.0000" />
+          <AbstractNodeData Name="Up_Button" ActionTag="-141458588" Tag="6" IconVisible="False" RightMargin="1091.0000" TopMargin="605.0000" TouchEnable="True" FontSize="14" ButtonText="UP" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="45.0000" Y="35.0000" />
             <AnchorPoint />
-            <Position X="1.2913" Y="-2.8100" />
+            <Position />
             <Scale ScaleX="2.9029" ScaleY="2.3433" />
             <CColor A="255" R="165" G="42" B="42" />
-            <PrePosition X="0.0011" Y="-0.0044" />
-            <PreSize X="0.0405" Y="0.0547" />
+            <PrePosition />
+            <PreSize X="0.0396" Y="0.0547" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
             <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
@@ -58,13 +58,13 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Down_Button" ActionTag="809064357" Tag="7" IconVisible="False" LeftMargin="1092.7959" RightMargin="-2.7959" TopMargin="607.5366" BottomMargin="-2.5366" TouchEnable="True" FontSize="14" ButtonText="DOWN" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Down_Button" ActionTag="809064357" Tag="7" IconVisible="False" LeftMargin="1090.0000" TopMargin="605.0000" TouchEnable="True" FontSize="14" ButtonText="DOWN" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="46.0000" Y="35.0000" />
             <AnchorPoint ScaleX="1.0000" />
-            <Position X="1138.7959" Y="-2.5366" />
+            <Position X="1136.0000" />
             <Scale ScaleX="2.9029" ScaleY="2.4620" />
             <CColor A="255" R="165" G="42" B="42" />
-            <PrePosition X="1.0025" Y="-0.0040" />
+            <PrePosition X="1.0000" />
             <PreSize X="0.0405" Y="0.0547" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />

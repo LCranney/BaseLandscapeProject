@@ -7,6 +7,12 @@
         <Image Name="HelloWorld.png" />
         <Image Name="Background.png" />
         <Image Name="PLayer Tank.png" />
+        <Project Name="Enemy_Tank.csd" Type="Node" />
+        <Project Name="Wall.csd" Type="Node" />
+        <Project Name="Barrel.csd" Type="Node" />
+        <Image Name="Enemy Tank.png" />
+        <Image Name="Barrel SpriteSheet.png" />
+        <Image Name="Wall.png" />
       </RootFolder>
     </Group>
   </SolutionFolder>
