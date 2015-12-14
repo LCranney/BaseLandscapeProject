@@ -1,4 +1,3 @@
-
 #include "GameManager.h"
 
 GameManager* GameManager::instance = NULL;
@@ -17,6 +16,7 @@ GameManager* GameManager::sharedGameManager()
 GameManager::GameManager()
 {
 	isGameLive = false;
+	score = 0;
 }
 
 GameManager::~GameManager()

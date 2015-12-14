@@ -24,7 +24,13 @@
     <ClCompile Include="..\Classes\GameManager.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="Spawning.cpp">
+    <ClCompile Include="..\Classes\EnemyTank.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Wall.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Barrel.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,7 +47,13 @@
     <ClInclude Include="..\Classes\GameManager.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="Spawning.h">
+    <ClInclude Include="..\Classes\EnemyTank.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Wall.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Barrel.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
