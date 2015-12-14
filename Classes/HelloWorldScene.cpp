@@ -194,13 +194,8 @@ void HelloWorld::update(float delta)
 	{
 		Vec2 currentPos = Tank->getPosition();
 		Tank->setPosition(currentPos.x, currentPos.y);
-
-
-
 		GameManager::sharedGameManager()->AddToScore(1);
-
 		int score = GameManager::sharedGameManager()->GetScore();
-
 		scoreLabel->setString(StringUtils::format("Score: %d", GameManager::sharedGameManager()->GetScore()));
 
 		if (score % 250 == 0)
