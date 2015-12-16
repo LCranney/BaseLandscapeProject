@@ -17,6 +17,17 @@
             <FileData Type="Normal" Path="Background.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
+          <AbstractNodeData Name="High" ActionTag="392763079" Tag="11" IconVisible="False" LeftMargin="562.3381" RightMargin="573.6619" TopMargin="166.9855" BottomMargin="473.0145" FontSize="20" LabelText="" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint ScaleX="1.0000" ScaleY="0.5000" />
+            <Position X="562.3381" Y="473.0145" />
+            <Scale ScaleX="2.0000" ScaleY="2.3000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.4950" Y="0.7391" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
           <AbstractNodeData Name="Player" ActionTag="1613987195" Tag="4" IconVisible="False" LeftMargin="24.5000" RightMargin="1020.5000" TopMargin="327.0000" BottomMargin="237.0000" ctype="SpriteObjectData">
             <Size X="91.0000" Y="76.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -80,17 +91,6 @@
             <Scale ScaleX="2.3577" ScaleY="2.3000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.4991" Y="0.0642" />
-            <PreSize X="0.0000" Y="0.0000" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="High" ActionTag="392763079" Tag="11" IconVisible="False" LeftMargin="562.3381" RightMargin="573.6619" TopMargin="166.9855" BottomMargin="473.0145" FontSize="20" LabelText="" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="0.0000" Y="0.0000" />
-            <AnchorPoint ScaleX="1.0000" ScaleY="0.5000" />
-            <Position X="562.3381" Y="473.0145" />
-            <Scale ScaleX="2.0000" ScaleY="2.3000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4950" Y="0.7391" />
             <PreSize X="0.0000" Y="0.0000" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />

@@ -37,7 +37,15 @@ bool Barrel::init()
 
 	barrel = (Sprite*)rootNode->getChildByName("Barrel");
 
-	currentSpeed = 200.0f;
+	auto winSize = Director::getInstance()->getVisibleSize();
+	this->setPosition(Vec2(0.0f, winSize.height*0.5f));
+	this->scheduleUpdate();
+
+	startXPosition = 1190.0f;
+	startYPosition = barrel->getPositionY();
+	barrel->setPosition(startXPosition, startYPosition);
+
+	currentSpeed = 350.0f;
 	
 
 	return true;
@@ -56,6 +64,22 @@ Barrel::~Barrel()
 
 void Barrel::update(float deltaTime)
 {
+	if (GameManager::sharedGameManager()->isGameLive)
+	{
+		//Get the window size.
+		auto  winSize = Director::getInstance()->getVisibleSize();
+
+		//Move the pipes to the left.
+		Vec2 currentBarrelPos = barrel->getPosition();
+		barrel->setPosition(currentBarrelPos.x - currentSpeed*deltaTime, currentBarrelPos.y);
+
+		//Did the x position (incorporating the sprite width) go off screen.
+		if (currentBarrelPos.x < -barrel->getBoundingBox().size.width*0.5f)
+		{
+			//Set the new positionings.
+			barrel->setPosition(startXPosition, startYPosition);
+		}
+	}
 }
 
 bool Barrel::hasCollidedWithABarrel(Rect collisionBoxToCheck)
@@ -69,4 +93,8 @@ bool Barrel::hasCollidedWithABarrel(Rect collisionBoxToCheck)
 		return true;
 	}
 	return false;
+}
+void Barrel::reset()
+{
+	barrel->setPosition(startXPosition, startYPosition);
 }
