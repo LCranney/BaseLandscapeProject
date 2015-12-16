@@ -17,11 +17,13 @@ public:
 	static Barrel* create();
 
 	void    update(float);
-
+	void	reset();
 	bool    hasCollidedWithABarrel(cocos2d::Rect collisionBoxToCheck);
 
 private:
 	cocos2d::Sprite* barrel;
+	float       startXPosition;
+	float       startYPosition;
 	float       currentSpeed;
 
 

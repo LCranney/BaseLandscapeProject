@@ -17,6 +17,17 @@
             <FileData Type="Normal" Path="Background.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
+          <AbstractNodeData Name="High" ActionTag="392763079" Tag="11" IconVisible="False" LeftMargin="562.3381" RightMargin="573.6619" TopMargin="166.9855" BottomMargin="473.0145" FontSize="20" LabelText="" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint ScaleX="1.0000" ScaleY="0.5000" />
+            <Position X="562.3381" Y="473.0145" />
+            <Scale ScaleX="2.0000" ScaleY="2.3000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.4950" Y="0.7391" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
           <AbstractNodeData Name="Player" ActionTag="1613987195" Tag="4" IconVisible="False" LeftMargin="24.5000" RightMargin="1020.5000" TopMargin="327.0000" BottomMargin="237.0000" ctype="SpriteObjectData">
             <Size X="91.0000" Y="76.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -84,24 +95,13 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="High" ActionTag="392763079" Tag="11" IconVisible="False" LeftMargin="562.3381" RightMargin="573.6619" TopMargin="166.9855" BottomMargin="473.0145" FontSize="20" LabelText="" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="0.0000" Y="0.0000" />
-            <AnchorPoint ScaleX="1.0000" ScaleY="0.5000" />
-            <Position X="562.3381" Y="473.0145" />
-            <Scale ScaleX="2.0000" ScaleY="2.3000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4950" Y="0.7391" />
-            <PreSize X="0.0000" Y="0.0000" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="PlayerHealth" ActionTag="1454246958" Tag="9" IconVisible="False" LeftMargin="514.8774" RightMargin="531.1226" TopMargin="32.7607" BottomMargin="584.2393" FontSize="20" LabelText="" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="0.0000" Y="0.0000" />
+          <AbstractNodeData Name="Player_Health" ActionTag="-62080452" Tag="10" IconVisible="False" LeftMargin="564.0000" RightMargin="550.0000" TopMargin="28.5000" BottomMargin="588.5000" FontSize="20" LabelText="20" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="22.0000" Y="23.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="559.8774" Y="595.7393" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <Position X="575.0000" Y="600.0000" />
+            <Scale ScaleX="2.7024" ScaleY="2.3825" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4928" Y="0.9308" />
+            <PrePosition X="0.5062" Y="0.9375" />
             <PreSize X="0.0000" Y="0.0000" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />

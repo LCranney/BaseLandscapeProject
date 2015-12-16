@@ -17,11 +17,13 @@ public:
 	static EnemyTank* create();
 
 	void    update(float);
-
+	void	reset();
 	bool    hasCollidedWithAEnemyTank(cocos2d::Rect collisionBoxToCheck);
 
 private:
 	cocos2d::Sprite* Enemy_Tank;
+	float       startXPosition;
+	float       startYPosition;
 	float       currentSpeed;
 
 

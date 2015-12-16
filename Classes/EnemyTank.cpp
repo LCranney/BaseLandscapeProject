@@ -31,11 +31,17 @@ bool EnemyTank::init()
 	auto rootNode = CSLoader::createNode("res/EnemyTank.csb");
 	addChild(rootNode);
 
+	auto winSize = Director::getInstance()->getVisibleSize();
+	this->setPosition(Vec2(0.0f, winSize.height*0.25f));
 	this->scheduleUpdate();
 
 	Enemy_Tank = (Sprite*)rootNode->getChildByName("enemyTank");
 
-	currentSpeed = 200.0f;
+	startXPosition = 1190.0f;
+	startYPosition = Enemy_Tank->getPositionY();
+	Enemy_Tank->setPosition(startXPosition, startYPosition);
+
+	currentSpeed = 400.0f;
 
 	return true;
 }
@@ -53,6 +59,23 @@ EnemyTank::~EnemyTank()
 
 void EnemyTank::update(float deltaTime)
 {
+	if (GameManager::sharedGameManager()->isGameLive)
+	{
+		//Get the window size.
+		auto  winSize = Director::getInstance()->getVisibleSize();
+
+		//Move the pipes to the left.
+		Vec2 currentTankPos = Enemy_Tank->getPosition();
+		Enemy_Tank->setPosition(currentTankPos.x - currentSpeed*deltaTime, currentTankPos.y);
+
+		//Did the x position (incorporating the sprite width) go off screen.
+		if (currentTankPos.x < -Enemy_Tank->getBoundingBox().size.width*0.5f)
+		{
+			//Set the new positionings.
+			Enemy_Tank->setPosition(startXPosition, startYPosition);
+		}
+	}
+
 }
 
 bool EnemyTank::hasCollidedWithAEnemyTank(Rect collisionBoxToCheck)
@@ -66,4 +89,8 @@ bool EnemyTank::hasCollidedWithAEnemyTank(Rect collisionBoxToCheck)
 		return true;
 	}
 	return false;
+}
+void EnemyTank::reset()
+{
+	Enemy_Tank->setPosition(startXPosition, startYPosition);
 }

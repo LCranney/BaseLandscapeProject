@@ -32,11 +32,17 @@ bool Wall::init()
 	auto rootNode = CSLoader::createNode("res/Wall.csb");
 	addChild(rootNode);
 
+	auto winSize = Director::getInstance()->getVisibleSize();
+	this->setPosition(Vec2(0.0f, winSize.height*0.8f));
 	this->scheduleUpdate();
 
 	wall = (Sprite*)rootNode->getChildByName("Wall");
 
-	currentSpeed = 200.0f;
+	startXPosition = 1190.0f;
+	startYPosition = wall->getPositionY();
+	wall->setPosition(startXPosition, startYPosition);
+
+	currentSpeed = 250.0f;
 
 	return true;
 }
@@ -54,6 +60,22 @@ Wall::~Wall()
 
 void Wall::update(float deltaTime)
 {
+	if (GameManager::sharedGameManager()->isGameLive)
+	{
+		//Get the window size.
+		auto  winSize = Director::getInstance()->getVisibleSize();
+
+		//Move the pipes to the left.
+		Vec2 currentWallPos = wall->getPosition();
+		wall->setPosition(currentWallPos.x - currentSpeed*deltaTime, currentWallPos.y);
+
+		//Did the x position (incorporating the sprite width) go off screen.
+		if (currentWallPos.x < -wall->getBoundingBox().size.width*0.5f)
+		{
+			//Set the new positionings.
+			wall->setPosition(startXPosition, startYPosition);
+		}
+	}
 }
 
 bool Wall::hasCollidedWithAWall(Rect collisionBoxToCheck)
@@ -67,4 +89,8 @@ bool Wall::hasCollidedWithAWall(Rect collisionBoxToCheck)
 		return true;
 	}
 	return false;
+}
+void Wall::reset()
+{
+	wall->setPosition(startXPosition, startYPosition);
 }

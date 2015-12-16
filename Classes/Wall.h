@@ -17,11 +17,13 @@ public:
 	static Wall* create();
 
 	void    update(float);
-
+	void	reset();
 	bool    hasCollidedWithAWall(cocos2d::Rect collisionBoxToCheck);
 
 private:
 	cocos2d::Sprite* wall;
+	float       startXPosition;
+	float       startYPosition;
 	float       currentSpeed;
 
 
