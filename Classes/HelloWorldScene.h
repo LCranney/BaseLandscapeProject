@@ -65,7 +65,7 @@ public:
 private:
 	cocos2d::ui::Text*      scoreLabel;
 	cocos2d::ui::Text*      playerHealth;
-	cocos2d::ui::Text*      Highscore;
+	cocos2d::ui::Text*      Highscore;	
 	cocos2d::ui::Button*	StartButton;
 	cocos2d::ui::Button*	Up_Button;
 	cocos2d::ui::Button*	Down_Button;

@@ -61,17 +61,13 @@ bool HelloWorld::init()
 	this->addChild(barrel);
 
 
-	scoreLabel = (cocos2d::ui::Text*)rootNode->getChildByName("label");
-	scoreLabel->setPosition(Vec2(winSize.width*0.5f, 0));
-	scoreLabel->setAnchorPoint(Vec2(0.5, 0));
+	scoreLabel = static_cast<ui::Text*>(rootNode->getChildByName("label"));
 	
-	Highscore = (cocos2d::ui::Text*)rootNode->getChildByName("High");
+	Highscore = static_cast<ui::Text*>(rootNode->getChildByName("High"));
 	Highscore->setPosition(Vec2(0-500.0f, 3 * (winSize.height*0.25f)));
 	Highscore->setAnchorPoint(Vec2(0.5, 0.5));
 
-	//playerHealth = (cocos2d::ui::Text*)rootNode->getChildByName("PlayerHealth");
-	//playerHealth->setPosition(Vec2(winSize.width*0.5f, 7 * (winSize.height*0.125f)));
-	//playerHealth->setAnchorPoint(Vec2(0.5, 0.5));
+	playerHealth = static_cast<ui::Text*>(rootNode->getChildByName("Player_Health"));
 
 	////TOUCHES
 	auto touchListener = EventListenerTouchOneByOne::create();
@@ -225,7 +221,9 @@ void HelloWorld::update(float delta)
 		int score = GameManager::sharedGameManager()->GetScore();
 		Health = GameManager::sharedGameManager()->GetHealth();
 		scoreLabel->setString(StringUtils::format("Score: %d", GameManager::sharedGameManager()->GetScore()));
-		//playerHealth->setString(StringUtils::format("Health: %d", GameManager::sharedGameManager()->GetHealth()));
+		
+		playerHealth->setString(StringUtils::format("%d", Health));
+
 		if (enemyTank->hasCollidedWithAEnemyTank(Tank->getBoundingBox()))
 		{
 			GameManager::sharedGameManager()->SubtractHealth(3);
@@ -243,7 +241,475 @@ void HelloWorld::update(float delta)
 		}
 		if (Health <= 0)
 		{
+			playerHealth->setString(StringUtils::format("%d", 0));
 			this->EndGame();
+		}
+		if (score % 250 == 0)
+		{
+			if (wave = false)
+			{
+				int spawn = 0;
+
+				if (score > 10000)
+				{
+					for (int i = 0; i < 1; i++)
+					{
+						while (row = false)
+						{
+							int rowNum = (CCRANDOM_0_1() * 3) + 1;
+
+							if (rowNum == 1)
+							{
+								while (row1 = false)
+								{
+									spawnX = 1136;
+									spawnY = 242;
+
+									row1 = true;
+									row = true;
+								}
+							}
+							else if (rowNum == 2)
+							{
+								while (row2 = false)
+								{
+									spawnX = 1136;
+									spawnY = 355;
+
+									row2 = true;
+									row = true;
+								}
+							}
+							else if (rowNum == 3)
+							{
+								while (row3 = false)
+								{
+									spawnX = 1136;
+									spawnY = 468;
+
+									row3 = true;
+									row = true;
+								}
+							}
+							else if (rowNum == 4)
+							{
+								while (row4 = false)
+								{
+									spawnX = 1136;
+									spawnY = 581;
+
+									row4 = true;
+									row = true;
+								}
+							}
+						}
+						row = false;
+
+						while (enemy = false)
+						{
+							int enemyNum = (CCRANDOM_0_1() * 8) + 1;
+
+							if (enemyNum == 1)
+							{
+								while (tank1 = false)
+								{
+									enemyTank->setPosition(spawnX, spawnY);
+
+									tank1 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 2)
+							{
+								while (tank2 = false)
+								{
+									enemyTank->setPosition(spawnX, spawnY);
+
+									tank2 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 3)
+							{
+								while (tank3 = false)
+								{
+									enemyTank->setPosition(spawnX, spawnY);
+
+									tank3 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 4)
+							{
+								while (barrel1)
+								{
+									barrel->setPosition(spawnX, spawnX);
+
+									barrel1 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 5)
+							{
+								while (barrel2 = false)
+								{
+									barrel->setPosition(spawnX, spawnX);
+
+									barrel2 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 6)
+							{
+								while (barrel3 = false)
+								{
+									barrel->setPosition(spawnX, spawnX);
+
+									barrel3 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 7)
+							{
+								while (wall1 = false)
+								{
+									wall->setPosition(spawnX, spawnY);
+
+									wall1 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 8)
+							{
+								while (wall2 = true)
+								{
+									wall->setPosition(spawnX, spawnY);
+
+									wall2 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 9)
+							{
+								while (wall3 = true)
+								{
+									wall->setPosition(spawnX, spawnY);;
+
+									wall3 = true;
+									enemy = true;
+								}
+							}
+						}
+						enemy = false;
+					}
+				}
+				else if (10000 < score < 20000)
+				{
+					for (int i = 0; i < 2; i++)
+					{
+						while (row = false)
+						{
+							int rowNum = (CCRANDOM_0_1() * 3) + 1;
+
+							if (rowNum == 1)
+							{
+								while (row1 = false)
+								{
+									spawnX = 1136;
+									spawnY = 242;
+
+									row1 = true;
+									row = true;
+								}
+							}
+							else if (rowNum == 2)
+							{
+								while (row2 = false)
+								{
+									spawnX = 1136;
+									spawnY = 355;
+
+									row2 = true;
+									row = true;
+								}
+							}
+							else if (rowNum == 3)
+							{
+								while (row3 = false)
+								{
+									spawnX = 1136;
+									spawnY = 468;
+
+									row3 = true;
+									row = true;
+								}
+							}
+							else if (rowNum == 4)
+							{
+								while (row4 = false)
+								{
+									spawnX = 1136;
+									spawnY = 581;
+
+									row4 = true;
+									row = true;
+								}
+							}
+						}
+						row = false;
+
+						while (enemy = false)
+						{
+							int enemyNum = (CCRANDOM_0_1() * 8) + 1;
+
+							if (enemyNum == 1)
+							{
+								while (tank1 = false)
+								{
+									enemyTank->setPosition(spawnX, spawnY);
+
+									tank1 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 2)
+							{
+								while (tank2 = false)
+								{
+									enemyTank->setPosition(spawnX, spawnY);
+
+									tank2 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 3)
+							{
+								while (tank3 = false)
+								{
+									enemyTank->setPosition(spawnX, spawnY);
+
+									tank3 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 4)
+							{
+								while (barrel1)
+								{
+									barrel->setPosition(spawnX, spawnX);
+
+									barrel1 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 5)
+							{
+								while (barrel2 = false)
+								{
+									barrel->setPosition(spawnX, spawnX);
+
+									barrel2 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 6)
+							{
+								while (barrel3 = false)
+								{
+									barrel->setPosition(spawnX, spawnX);
+
+									barrel3 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 7)
+							{
+								while (wall1 = false)
+								{
+									wall->setPosition(spawnX, spawnY);
+
+									wall1 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 8)
+							{
+								while (wall2 = true)
+								{
+									wall->setPosition(spawnX, spawnY);
+
+									wall2 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 9)
+							{
+								while (wall3 = true)
+								{
+									wall->setPosition(spawnX, spawnY);
+
+									wall3 = true;
+									enemy = true;
+								}
+							}
+						}
+						enemy = false;
+					}
+				}
+				else if (20000 < score)
+				{
+					for (int i = 0; i < 3; i++)
+					{
+						while (row = false)
+						{
+							int rowNum = (CCRANDOM_0_1() * 3) + 1;
+
+							if (rowNum == 1)
+							{
+								while (row1 = false)
+								{
+									spawnX = 1136;
+									spawnY = 242;
+
+									row1 = true;
+									row = true;
+								}
+							}
+							else if (rowNum == 2)
+							{
+								while (row2 = false)
+								{
+									spawnX = 1136;
+									spawnY = 355;
+
+									row2 = true;
+									row = true;
+								}
+							}
+							else if (rowNum == 3)
+							{
+								while (row3 = false)
+								{
+									spawnX = 1136;
+									spawnY = 468;
+
+									row3 = true;
+									row = true;
+								}
+							}
+							else if (rowNum == 4)
+							{
+								while (row4 = false)
+								{
+									spawnX = 1136;
+									spawnY = 581;
+
+									row4 = true;
+									row = true;
+								}
+							}
+						}
+						row = false;
+
+						while (enemy = false)
+						{
+							int enemyNum = (CCRANDOM_0_1() * 8) + 1;
+
+							if (enemyNum == 1)
+							{
+								while (tank1 = false)
+								{
+									enemyTank->setPosition(spawnX, spawnY);
+
+									tank1 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 2)
+							{
+								while (tank2 = false)
+								{
+									enemyTank->setPosition(spawnX, spawnY);
+
+									tank2 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 3)
+							{
+								while (tank3 = false)
+								{
+									enemyTank->setPosition(spawnX, spawnY);
+
+									tank3 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 4)
+							{
+								while (barrel1)
+								{
+									barrel->setPosition(spawnX, spawnX);
+
+									barrel1 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 5)
+							{
+								while (barrel2 = false)
+								{
+									barrel->setPosition(spawnX, spawnX);
+
+									barrel2 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 6)
+							{
+								while (barrel3 = false)
+								{
+									barrel->setPosition(spawnX, spawnX);
+
+									barrel3 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 7)
+							{
+								while (wall1 = false)
+								{
+									wall->setPosition(spawnX, spawnY);
+
+									wall1 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 8)
+							{
+								while (wall2 = true)
+								{
+									wall->setPosition(spawnX, spawnY);
+
+									wall2 = true;
+									enemy = true;
+								}
+							}
+							else if (enemyNum == 9)
+							{
+								while (wall3 = true)
+								{
+									wall->setPosition(spawnX, spawnY);
+
+									wall3 = true;
+									enemy = true;
+								}
+							}
+						}
+						enemy = false;
+					}
+				}
+			}
 		}
 	}
 }

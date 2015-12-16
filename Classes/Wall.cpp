@@ -33,7 +33,7 @@ bool Wall::init()
 	addChild(rootNode);
 
 	auto winSize = Director::getInstance()->getVisibleSize();
-	this->setPosition(Vec2(0.0f, winSize.height*0.75f));
+	this->setPosition(Vec2(0.0f, winSize.height*0.8f));
 	this->scheduleUpdate();
 
 	wall = (Sprite*)rootNode->getChildByName("Wall");
