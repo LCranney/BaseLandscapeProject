@@ -30,7 +30,7 @@ bool Barrel::init()
 	}
 
 	//Load this object in from cocos studio.
-	auto rootNode = CSLoader::createNode("Barrel.csd");
+	auto rootNode = CSLoader::createNode("res/Barrel.csb");
 	addChild(rootNode);
 
 	this->scheduleUpdate();
@@ -38,6 +38,7 @@ bool Barrel::init()
 	barrel = (Sprite*)rootNode->getChildByName("Barrel");
 
 	currentSpeed = 200.0f;
+	
 
 	return true;
 }

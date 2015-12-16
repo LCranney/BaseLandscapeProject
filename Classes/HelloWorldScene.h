@@ -45,17 +45,14 @@ public:
 	bool tank1;
 	bool tank2;
 	bool tank3;
-	bool tank4;
 
 	bool barrel1;
 	bool barrel2;
 	bool barrel3;
-	bool barrel4;
 
 	bool wall1;
 	bool wall2;
 	bool wall3;
-	bool wall4;
 
 	bool row1;
 	bool row2;
@@ -67,15 +64,15 @@ public:
 
 private:
 	cocos2d::ui::Text*      scoreLabel;
-	cocos2d::ui::Text*      health;
+	cocos2d::ui::Text*      playerHealth;
 	cocos2d::ui::Text*      Highscore;
 	cocos2d::ui::Button*	StartButton;
 	cocos2d::ui::Button*	Up_Button;
 	cocos2d::ui::Button*	Down_Button;
 	cocos2d::Sprite*		Tank;
-	cocos2d::Node*          wallNode;
-	cocos2d::Node*          enemyTankNode;
-	cocos2d::Node*          barrelNode;
+	Wall*			        wallNode;
+	EnemyTank*				enemyTankNode;
+	Barrel*			        barrelNode;
 	int						HighScore;
 	int						Health;
 	Wall*					wall;

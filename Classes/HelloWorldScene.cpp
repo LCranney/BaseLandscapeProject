@@ -46,19 +46,19 @@ bool HelloWorld::init()
 	HighScore = 0;
 	Tank = (Sprite*)rootNode->getChildByName("Player");
 
-	/*enemyTankNode = (Node*)rootNode->getChildByName("enemyTankNode");
+	enemyTankNode = (EnemyTank*)rootNode->getChildByName("enemyTank");
 	enemyTank = EnemyTank::create();
-	enemyTankNode->addChild(enemyTank);
+	this->addChild(enemyTank);
 
 
-	wallNode = (Node*)rootNode->getChildByName("wallNode");
+	wallNode = (Wall*)rootNode->getChildByName("Wall");
 	wall = Wall::create();
-	wallNode->addChild(wall);
+	this->addChild(wall);
 
 
-	barrelNode = (Node*)rootNode->getChildByName("barrelNode");
+	barrelNode = (Barrel*)rootNode->getChildByName("Barrel");
 	barrel = Barrel::create();
-	barrelNode->addChild(barrel);*/
+	this->addChild(barrel);
 
 
 	scoreLabel = (cocos2d::ui::Text*)rootNode->getChildByName("label");
@@ -69,7 +69,10 @@ bool HelloWorld::init()
 	Highscore->setPosition(Vec2(0-500.0f, 3 * (winSize.height*0.25f)));
 	Highscore->setAnchorPoint(Vec2(0.5, 0.5));
 
-	health = (cocos2d::ui::Text*)rootNode->getChildByName("Health");
+	//playerHealth = (cocos2d::ui::Text*)rootNode->getChildByName("PlayerHealth");
+	//playerHealth->setPosition(Vec2(winSize.width*0.5f, 7 * (winSize.height*0.125f)));
+	//playerHealth->setAnchorPoint(Vec2(0.5, 0.5));
+
 	////TOUCHES
 	auto touchListener = EventListenerTouchOneByOne::create();
 
@@ -219,7 +222,7 @@ void HelloWorld::update(float delta)
 		int score = GameManager::sharedGameManager()->GetScore();
 		int Health = GameManager::sharedGameManager()->GetHealth();
 		scoreLabel->setString(StringUtils::format("Score: %d", GameManager::sharedGameManager()->GetScore()));
-		//health->setString(StringUtils::format("Health: %d", GameManager::sharedGameManager()->GetHealth()));
+		//playerHealth->setString(StringUtils::format("Health: %d", GameManager::sharedGameManager()->GetHealth()));
 		/*if (enemyTank->hasCollidedWithAEnemyTank(Tank->getBoundingBox()))
 		{
 			GameManager::sharedGameManager()->SubtractHealth(3);
