@@ -28,7 +28,7 @@ bool Wall::init()
 	}
 
 	//Load this object in from cocos studio.
-	auto rootNode = CSLoader::createNode("Enemy_Tank.csb");
+	auto rootNode = CSLoader::createNode("Wall.csd");
 	addChild(rootNode);
 
 	this->scheduleUpdate();

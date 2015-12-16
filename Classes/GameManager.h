@@ -18,6 +18,10 @@ public:
 	void ResetScore();
 	int GetScore();
 
+	void SubtractHealth(int increment);
+	void ResetHealth();
+	int GetHealth();
+
 	bool isGameLive;
 
 private:
@@ -25,5 +29,6 @@ private:
 	static GameManager* instance;
 
 	int score;
+	int health;
 };
 #endif /* defined(__CocosProject__GameManger__) */

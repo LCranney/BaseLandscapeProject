@@ -17,6 +17,7 @@ GameManager::GameManager()
 {
 	isGameLive = false;
 	score = 0;
+	health = 20;
 }
 
 GameManager::~GameManager()
@@ -37,4 +38,19 @@ void GameManager::ResetScore()
 int GameManager::GetScore()
 {
 	return score;
+}
+
+void GameManager::SubtractHealth(int increment)
+{
+	this->health -= increment;
+}
+
+void GameManager::ResetHealth()
+{
+	health = 20;
+}
+
+int GameManager::GetHealth()
+{
+	return health;
 }

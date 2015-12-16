@@ -63,8 +63,11 @@ public:
 	bool row4;
 	bool row5;
 
+
+
 private:
 	cocos2d::ui::Text*      scoreLabel;
+	cocos2d::ui::Text*      health;
 	cocos2d::ui::Text*      Highscore;
 	cocos2d::ui::Button*	StartButton;
 	cocos2d::ui::Button*	Up_Button;

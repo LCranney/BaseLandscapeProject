@@ -1,10 +1,8 @@
-//
-//  EnemyTank.h
-//  CocosProject
-//
-
 #ifndef __CocosProject__EnemyTank__
 #define __CocosProject__EnemyTank__
+
+#include "cocos2d.h"
+#include "ui/cocosGUI.h"
 
 #include <stdio.h>
 

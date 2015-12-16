@@ -1,10 +1,8 @@
-//
-//  Wall.h
-//  CocosProject
-//
-
 #ifndef __CocosProject__Wall__
 #define __CocosProject__Wall__
+
+#include "cocos2d.h"
+#include "ui/cocosGUI.h"
 
 #include <stdio.h>
 

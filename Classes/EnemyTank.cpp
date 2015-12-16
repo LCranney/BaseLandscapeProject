@@ -28,12 +28,12 @@ bool EnemyTank::init()
 	}
 
 	//Load this object in from cocos studio.
-	auto rootNode = CSLoader::createNode("Enemy_Tank.csb");
-	addChild(rootNode);
+	auto tankNode = CSLoader::createNode("Enemy_Tank.csd");
+	addChild(tankNode);
 
 	this->scheduleUpdate();
 
-	Enemy_Tank = (Sprite*)rootNode->getChildByName("Enemy_Tank");
+	Enemy_Tank = (Sprite*)tankNode->getChildByName("Enemy_Tank");
 
 	currentSpeed = 200.0f;
 
