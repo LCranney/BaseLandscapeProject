@@ -95,13 +95,13 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Player_Health" ActionTag="-62080452" Tag="10" IconVisible="False" LeftMargin="546.5109" RightMargin="567.4891" TopMargin="22.5917" BottomMargin="594.4083" FontSize="20" LabelText="20" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="Player_Health" ActionTag="-62080452" Tag="10" IconVisible="False" LeftMargin="564.0000" RightMargin="550.0000" TopMargin="28.5000" BottomMargin="588.5000" FontSize="20" LabelText="20" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="22.0000" Y="23.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="557.5109" Y="605.9083" />
+            <Position X="575.0000" Y="600.0000" />
             <Scale ScaleX="2.7024" ScaleY="2.3825" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4908" Y="0.9467" />
+            <PrePosition X="0.5062" Y="0.9375" />
             <PreSize X="0.0000" Y="0.0000" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
