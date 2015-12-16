@@ -2,6 +2,7 @@
 #include "cocostudio/CocoStudio.h"
 #include "GameManager.h"
 
+
 using namespace cocos2d;
 
 Wall* Wall::create()
@@ -28,7 +29,7 @@ bool Wall::init()
 	}
 
 	//Load this object in from cocos studio.
-	auto rootNode = CSLoader::createNode("Enemy_Tank.csb");
+	auto rootNode = CSLoader::createNode("res/Wall.csb");
 	addChild(rootNode);
 
 	this->scheduleUpdate();

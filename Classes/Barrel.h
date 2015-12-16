@@ -1,10 +1,8 @@
-//
-//  Barrel.h
-//  CocosProject
-//
-
 #ifndef __CocosProject__Barrel__
 #define __CocosProject__Barrel__
+
+#include "cocos2d.h"
+#include "ui/cocosGUI.h"
 
 #include <stdio.h>
 

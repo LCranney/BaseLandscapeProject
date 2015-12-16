@@ -28,5 +28,15 @@
         <EnableHTML5Advanced Value="False" />
       </Value>
     </Item>
+    <Item Key="TabsParamsKey">
+      <Value ctype="TabsInfo">
+        <OpenedDocuments>
+          <FilePathData Path="EnemyTank.csd" />
+          <FilePathData Path="Wall.csd" />
+          <FilePathData Path="Barrel.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="Wall.csd" />
+      </Value>
+    </Item>
   </Properties>
 </UserData>

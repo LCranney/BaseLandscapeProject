@@ -1,6 +1,8 @@
 #include "Barrel.h"
 #include "cocostudio/CocoStudio.h"
 #include "GameManager.h"
+#include "ui/CocosGUI.h"
+#include "stdio.h"
 
 using namespace cocos2d;
 
@@ -28,7 +30,7 @@ bool Barrel::init()
 	}
 
 	//Load this object in from cocos studio.
-	auto rootNode = CSLoader::createNode("Enemy_Tank.csb");
+	auto rootNode = CSLoader::createNode("res/Barrel.csb");
 	addChild(rootNode);
 
 	this->scheduleUpdate();
@@ -36,6 +38,7 @@ bool Barrel::init()
 	barrel = (Sprite*)rootNode->getChildByName("Barrel");
 
 	currentSpeed = 200.0f;
+	
 
 	return true;
 }

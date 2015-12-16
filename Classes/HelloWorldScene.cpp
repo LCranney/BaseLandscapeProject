@@ -44,20 +44,22 @@ bool HelloWorld::init()
 	this->scheduleUpdate();
 	auto winSize = Director::getInstance()->getVisibleSize();
 	HighScore = 0;
-	Health = 20;
 	Tank = (Sprite*)rootNode->getChildByName("Player");
 
-	enemyTankNode = (Node*)rootNode->getChildByName("enemyTankNode");
+	enemyTankNode = (EnemyTank*)rootNode->getChildByName("enemyTank");
 	enemyTank = EnemyTank::create();
-	enemyTankNode->addChild(enemyTank);
+	this->addChild(enemyTank);
 
-	wallNode = (Node*)rootNode->getChildByName("wallNode");
+
+	wallNode = (Wall*)rootNode->getChildByName("Wall");
 	wall = Wall::create();
-	wallNode->addChild(wall);
+	this->addChild(wall);
 
-	barrelNode = (Node*)rootNode->getChildByName("barrelNode");
+
+	barrelNode = (Barrel*)rootNode->getChildByName("Barrel");
 	barrel = Barrel::create();
-	barrelNode->addChild(barrel);
+	this->addChild(barrel);
+
 
 	scoreLabel = (cocos2d::ui::Text*)rootNode->getChildByName("label");
 	scoreLabel->setPosition(Vec2(winSize.width*0.5f, 0));
@@ -66,6 +68,11 @@ bool HelloWorld::init()
 	Highscore = (cocos2d::ui::Text*)rootNode->getChildByName("High");
 	Highscore->setPosition(Vec2(0-500.0f, 3 * (winSize.height*0.25f)));
 	Highscore->setAnchorPoint(Vec2(0.5, 0.5));
+
+	//playerHealth = (cocos2d::ui::Text*)rootNode->getChildByName("PlayerHealth");
+	//playerHealth->setPosition(Vec2(winSize.width*0.5f, 7 * (winSize.height*0.125f)));
+	//playerHealth->setAnchorPoint(Vec2(0.5, 0.5));
+
 	////TOUCHES
 	auto touchListener = EventListenerTouchOneByOne::create();
 
@@ -162,6 +169,7 @@ void HelloWorld::StartGame()
 	Highscore->runAction(Highscorereset);
 
 	GameManager::sharedGameManager()->ResetScore();
+	GameManager::sharedGameManager()->ResetHealth();
 }
 
 void HelloWorld::EndGame()
@@ -212,7 +220,25 @@ void HelloWorld::update(float delta)
 		Tank->setPosition(currentPos.x, currentPos.y);
 		GameManager::sharedGameManager()->AddToScore(1);
 		int score = GameManager::sharedGameManager()->GetScore();
+		int Health = GameManager::sharedGameManager()->GetHealth();
 		scoreLabel->setString(StringUtils::format("Score: %d", GameManager::sharedGameManager()->GetScore()));
+		//playerHealth->setString(StringUtils::format("Health: %d", GameManager::sharedGameManager()->GetHealth()));
+		/*if (enemyTank->hasCollidedWithAEnemyTank(Tank->getBoundingBox()))
+		{
+			GameManager::sharedGameManager()->SubtractHealth(3);
+		}
+		if (wall->hasCollidedWithAWall(Tank->getBoundingBox()))
+		{
+			GameManager::sharedGameManager()->SubtractHealth(2);
+		}
+		if (barrel->hasCollidedWithABarrel(Tank->getBoundingBox()))
+		{
+			GameManager::sharedGameManager()->SubtractHealth(1);
+		}*/
+		if (Health == 0)
+		{
+			this->EndGame();
+		}
 
 		if (score % 250 == 0)
 		{
@@ -283,7 +309,7 @@ void HelloWorld::update(float delta)
 							{
 								while (tank1 = false)
 								{
-									EnemyTank(spawnX, spawnY);
+									enemyTank->setPosition(spawnX, spawnY);
 
 									tank1 = true;
 									enemy = true;
@@ -293,7 +319,7 @@ void HelloWorld::update(float delta)
 							{
 								while (tank2 = false)
 								{
-									EnemyTank(spawnX, spawnY);
+									enemyTank->setPosition(spawnX, spawnY);
 
 									tank2 = true;
 									enemy = true;
@@ -303,7 +329,7 @@ void HelloWorld::update(float delta)
 							{
 								while (tank3 = false)
 								{
-									EnemyTank(spawnX, spawnY);
+									enemyTank->setPosition(spawnX, spawnY);
 
 									tank3 = true;
 									enemy = true;
@@ -313,7 +339,7 @@ void HelloWorld::update(float delta)
 							{
 								while (barrel1)
 								{
-									Barrel(spawnX, spawnY);
+									barrel->setPosition(spawnX, spawnY);
 
 									barrel1 = true;
 									enemy = true;
@@ -323,7 +349,7 @@ void HelloWorld::update(float delta)
 							{
 								while (barrel2 = false)
 								{
-									Barrel(spawnX, spawnY);
+									barrel->setPosition(spawnX, spawnY);
 
 									barrel2 = true;
 									enemy = true;
@@ -333,7 +359,7 @@ void HelloWorld::update(float delta)
 							{
 								while (barrel3 = false)
 								{
-									Barrel(spawnX, spawnY);
+									barrel->setPosition(spawnX, spawnY);
 
 									barrel3 = true;
 									enemy = true;
@@ -343,7 +369,7 @@ void HelloWorld::update(float delta)
 							{
 								while (wall1 = false)
 								{
-									Wall(spawnX, spawnY);
+									wall->setPosition(spawnX, spawnY);
 
 									wall1 = true;
 									enemy = true;
@@ -353,7 +379,7 @@ void HelloWorld::update(float delta)
 							{
 								while (wall2 = true)
 								{
-									Wall(spawnX, spawnY);
+									wall->setPosition(spawnX, spawnY);
 
 									wall2 = true;
 									enemy = true;
@@ -363,7 +389,7 @@ void HelloWorld::update(float delta)
 							{
 								while (wall3 = true)
 								{
-									Wall(spawnX, spawnY);
+									wall->setPosition(spawnX, spawnY);
 
 									wall3 = true;
 									enemy = true;
@@ -436,7 +462,7 @@ void HelloWorld::update(float delta)
 							{
 								while (tank1 = false)
 								{
-									EnemyTank(spawnX, spawnY);
+									enemyTank->setPosition(spawnX, spawnY);
 
 									tank1 = true;
 									enemy = true;
@@ -446,7 +472,7 @@ void HelloWorld::update(float delta)
 							{
 								while (tank2 = false)
 								{
-									EnemyTank(spawnX, spawnY);
+									enemyTank->setPosition(spawnX, spawnY);
 
 									tank2 = true;
 									enemy = true;
@@ -456,7 +482,7 @@ void HelloWorld::update(float delta)
 							{
 								while (tank3 = false)
 								{
-									EnemyTank(spawnX, spawnY);
+									enemyTank->setPosition(spawnX, spawnY);
 
 									tank3 = true;
 									enemy = true;
@@ -466,7 +492,7 @@ void HelloWorld::update(float delta)
 							{
 								while (barrel1)
 								{
-									Barrel(spawnX, spawnY);
+									barrel->setPosition(spawnX, spawnY);
 
 									barrel1 = true;
 									enemy = true;
@@ -476,7 +502,7 @@ void HelloWorld::update(float delta)
 							{
 								while (barrel2 = false)
 								{
-									Barrel(spawnX, spawnY);
+									barrel->setPosition(spawnX, spawnY);
 
 									barrel2 = true;
 									enemy = true;
@@ -486,7 +512,7 @@ void HelloWorld::update(float delta)
 							{
 								while (barrel3 = false)
 								{
-									Barrel(spawnX, spawnY);
+									barrel->setPosition(spawnX, spawnY);
 
 									barrel3 = true;
 									enemy = true;
@@ -496,7 +522,7 @@ void HelloWorld::update(float delta)
 							{
 								while (wall1 = false)
 								{
-									Wall(spawnX, spawnY);
+									wall->setPosition(spawnX, spawnY);
 
 									wall1 = true;
 									enemy = true;
@@ -506,7 +532,7 @@ void HelloWorld::update(float delta)
 							{
 								while (wall2 = true)
 								{
-									Wall(spawnX, spawnY);
+									wall->setPosition(spawnX, spawnY);
 
 									wall2 = true;
 									enemy = true;
@@ -516,7 +542,7 @@ void HelloWorld::update(float delta)
 							{
 								while (wall3 = true)
 								{
-									Wall(spawnX, spawnY);
+									wall->setPosition(spawnX, spawnY);
 
 									wall3 = true;
 									enemy = true;
@@ -589,7 +615,7 @@ void HelloWorld::update(float delta)
 							{
 								while (tank1 = false)
 								{
-									EnemyTank(spawnX, spawnY);
+									enemyTank->setPosition(spawnX, spawnY);
 
 									tank1 = true;
 									enemy = true;
@@ -599,7 +625,7 @@ void HelloWorld::update(float delta)
 							{
 								while (tank2 = false)
 								{
-									EnemyTank(spawnX, spawnY);
+									enemyTank->setPosition(spawnX, spawnY);
 
 									tank2 = true;
 									enemy = true;
@@ -609,7 +635,7 @@ void HelloWorld::update(float delta)
 							{
 								while (tank3 = false)
 								{
-									EnemyTank(spawnX, spawnY);
+									enemyTank->setPosition(spawnX, spawnY);
 
 									tank3 = true;
 									enemy = true;
@@ -619,7 +645,7 @@ void HelloWorld::update(float delta)
 							{
 								while (barrel1)
 								{
-									Barrel(spawnX, spawnY);
+									barrel->setPosition(spawnX, spawnY);
 
 									barrel1 = true;
 									enemy = true;
@@ -629,7 +655,7 @@ void HelloWorld::update(float delta)
 							{
 								while (barrel2 = false)
 								{
-									Barrel(spawnX, spawnY);
+									barrel->setPosition(spawnX, spawnY);
 
 									barrel2 = true;
 									enemy = true;
@@ -639,7 +665,7 @@ void HelloWorld::update(float delta)
 							{
 								while (barrel3 = false)
 								{
-									Barrel(spawnX, spawnY);
+									barrel->setPosition(spawnX, spawnY);
 
 									barrel3 = true;
 									enemy = true;
@@ -649,7 +675,7 @@ void HelloWorld::update(float delta)
 							{
 								while (wall1 = false)
 								{
-									Wall(spawnX, spawnY);
+									wall->setPosition(spawnX, spawnY);
 
 									wall1 = true;
 									enemy = true;
@@ -659,7 +685,7 @@ void HelloWorld::update(float delta)
 							{
 								while (wall2 = true)
 								{
-									Wall(spawnX, spawnY);
+									wall->setPosition(spawnX, spawnY);
 
 									wall2 = true;
 									enemy = true;
@@ -669,7 +695,7 @@ void HelloWorld::update(float delta)
 							{
 								while (wall3 = true)
 								{
-									Wall(spawnX, spawnY);
+									wall->setPosition(spawnX, spawnY);
 
 									wall3 = true;
 									enemy = true;
@@ -681,23 +707,5 @@ void HelloWorld::update(float delta)
 				}
 			}
 		}
-
-		if (enemyTank->hasCollidedWithAEnemyTank(Tank->getBoundingBox()))
-		{
-			Health = Health - 3;
-		}
-		if (wall->hasCollidedWithAWall(Tank->getBoundingBox()))
-		{
-			Health = Health - 2;
-		}
-		if (barrel->hasCollidedWithABarrel(Tank->getBoundingBox()))
-		{
-			Health = Health - 1;
-		}
-		if (Health == 0)
-		{
-			this->EndGame();
-		}
-
 	}
 }
