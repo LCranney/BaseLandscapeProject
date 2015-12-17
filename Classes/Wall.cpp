@@ -33,7 +33,7 @@ bool Wall::init()
 	addChild(rootNode);
 
 	auto winSize = Director::getInstance()->getVisibleSize();
-	this->setPosition(Vec2(0.0f, winSize.height*0.8f));
+	this->setPosition(Vec2(0.0f, winSize.height*0.8));
 	this->scheduleUpdate();
 
 	wall = (Sprite*)rootNode->getChildByName("Wall");
@@ -42,7 +42,7 @@ bool Wall::init()
 	startYPosition = wall->getPositionY();
 	wall->setPosition(startXPosition, startYPosition);
 
-	currentSpeed = 250.0f;
+	currentSpeed = 514.8f;
 
 	return true;
 }

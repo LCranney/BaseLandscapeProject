@@ -38,14 +38,14 @@ bool Barrel::init()
 	barrel = (Sprite*)rootNode->getChildByName("Barrel");
 
 	auto winSize = Director::getInstance()->getVisibleSize();
-	this->setPosition(Vec2(0.0f, winSize.height*0.5f));
+	this->setPosition(Vec2(0.0f, winSize.height*0.5));
 	this->scheduleUpdate();
 
 	startXPosition = 1190.0f;
 	startYPosition = barrel->getPositionY();
 	barrel->setPosition(startXPosition, startYPosition);
 
-	currentSpeed = 350.0f;
+	currentSpeed = 701.8f;
 	
 
 	return true;

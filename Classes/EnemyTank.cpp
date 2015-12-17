@@ -32,7 +32,8 @@ bool EnemyTank::init()
 	addChild(rootNode);
 
 	auto winSize = Director::getInstance()->getVisibleSize();
-	this->setPosition(Vec2(0.0f, winSize.height*0.25f));
+	this->setAnchorPoint(Vec2(1.0f, 0.0f));
+	this->setPosition(Vec2(0.0f, winSize.height*0.25));
 	this->scheduleUpdate();
 
 	Enemy_Tank = (Sprite*)rootNode->getChildByName("enemyTank");
@@ -41,7 +42,7 @@ bool EnemyTank::init()
 	startYPosition = Enemy_Tank->getPositionY();
 	Enemy_Tank->setPosition(startXPosition, startYPosition);
 
-	currentSpeed = 400.0f;
+	currentSpeed = 814.0f;
 
 	return true;
 }
