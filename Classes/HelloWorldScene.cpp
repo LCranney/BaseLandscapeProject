@@ -6,6 +6,7 @@
 #include "EnemyTank.h"
 #include "Wall.h"
 #include "Barrel.h"
+#include "SimpleAudioEngine.h"
 
 USING_NS_CC;
 
@@ -96,6 +97,7 @@ bool HelloWorld::init()
 	Down_Button->setAnchorPoint(Vec2(1, 0));
 	Down_Button->setPosition(Vec2(winSize.width, 0));
 	Down_Button->setScale(3.0f);
+
 
 	GameManager::sharedGameManager()->isGameLive = false;
 
@@ -215,34 +217,38 @@ void HelloWorld::update(float delta)
 {
 	if (GameManager::sharedGameManager()->isGameLive)
 	{
+
 		Vec2 currentPos = Tank->getPosition();
 		Tank->setPosition(currentPos.x, currentPos.y);
 		GameManager::sharedGameManager()->AddToScore(1);
 		int score = GameManager::sharedGameManager()->GetScore();
 		Health = GameManager::sharedGameManager()->GetHealth();
 		scoreLabel->setString(StringUtils::format("Score: %d", GameManager::sharedGameManager()->GetScore()));
-		
 		playerHealth->setString(StringUtils::format("Health: %d", Health));
 
 		if (enemyTank->hasCollidedWithAEnemyTank(Tank->getBoundingBox()))
 		{
 			GameManager::sharedGameManager()->SubtractHealth(3);
 			enemyTank->reset();
+			CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("res/crash-collision.wav", false, 1.0f, 1.0f, 1.0f);
 		}
 		if (wall->hasCollidedWithAWall(Tank->getBoundingBox()))
 		{
 			GameManager::sharedGameManager()->SubtractHealth(2);
 			wall->reset();
+			CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("res/crash-collision.wav", false, 1.0f, 1.0f, 1.0f);
 		}
 		if (barrel->hasCollidedWithABarrel(Tank->getBoundingBox()))
 		{
 			GameManager::sharedGameManager()->SubtractHealth(1);
 			barrel->reset();
+			CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("res/crash-collision.wav", false, 1.0f, 1.0f, 1.0f);
 		}
 		if (Health <= 0)
 		{
 			playerHealth->setString(StringUtils::format("Health: %d", 0));
 			this->EndGame();
+			CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("res/explosion.wav", false, 1.0f, 1.0f, 1.0f);
 		}
 	}
 }
