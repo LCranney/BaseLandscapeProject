@@ -98,6 +98,8 @@ bool HelloWorld::init()
 	Down_Button->setPosition(Vec2(winSize.width, 0));
 	Down_Button->setScale(3.0f);
 
+	CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("res/crash-collision.wav");
+	CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("res/explosion.wav");
 
 	GameManager::sharedGameManager()->isGameLive = false;
 
